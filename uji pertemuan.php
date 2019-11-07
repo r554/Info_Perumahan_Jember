@@ -6,5 +6,6 @@ $f="a";
 echo "$f";
 echo "<br>";
 echo '$f';
+echo "reza";
 
 ?>
