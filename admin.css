@@ -1,0 +1,82 @@
+.nav-link:hover {
+        background-color: grey;
+    }
+
+#button {margin: 1% }
+#button a {
+    width: 100px;
+    height: 30px;
+    vertical-align: middle;
+    background-color: #F00;
+    color: #ffffff;
+    text-decoration: none;
+    padding: 9px;
+    border-radius: 5px;
+    border: 1px solid transparent;
+}
+
+#popup { 
+
+    position: fixed;
+
+    top: 100px;
+    left: 450px;
+    z-index: 100;
+    visibility: hidden;
+}
+
+.window {
+    width:400px;
+    height:230px;
+    background: gray;
+    border-radius: 8px;
+    position: relative;
+    padding: 10px;
+    text-align: center;
+    margin: 15% auto;
+}
+
+.window h2 {
+    margin: 30px 0 0 0;
+}
+
+.close-button {
+  
+   
+    height: 25px;
+    width: 50px;
+    background: blue;
+    border-radius: 10%;
+    border: 1px solid #fff;
+    display: block;
+    text-align: center;
+    color: #fff;
+    text-decoration: none;
+    position: absolute;
+    top: 160px;
+    right: 210px;
+}
+
+.ok-button {
+    height: 25px;
+    width: 50px;
+    background: blue;
+    border-radius: 10%;
+    border: 1px solid #fff;
+    display: block;
+    text-align: center;
+    color: #fff;
+    text-decoration: none;
+    position: absolute;
+    top: 160px;
+    right: 80px;
+}
+
+#popup:target {
+    visibility: visible;
+}
+
+.h5 {
+    color: red;
+    
+}
