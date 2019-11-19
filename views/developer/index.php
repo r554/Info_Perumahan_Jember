@@ -178,19 +178,19 @@
             </li>
 
             <li class="nav-item">
-              <a href="?page=profile" class="nav-link">
+              <a href="?page=akun" class="nav-link">
                 <i class="nav-icon ion ion-person"></i>
                 <p>
-                  Profile
+                  Akun
                 </p>
               </a>
             </li>
 
             <li class="nav-item">
-              <a href="?page=pendaftar" class="nav-link">
+              <a href="?page=profil_perusahaan" class="nav-link">
                 <i class="nav-icon ion ion-person-add"></i>
                 <p>
-                  Pendaftar
+                  Profil perusahaan
                 </p>
               </a>
             </li>
@@ -229,17 +229,17 @@
       if (@$_GET['page'] == 'dashboard') {
         include "../../views/developer/dashboard.php";
       } elseif (@$_GET['page'] == 'profile') {
-        include "../../views/admin/profile.php";
+        include "../../views/developer/akun.php";
       } elseif (@$_GET['page'] == 'pendaftar') {
-        include "../../views/admin/pendaftar.php";
+        include "../../views/developer/profil_perusahaan.php";
       } elseif (@$_GET['page'] == 'akun_terdaftar') {
-        include "../../views/admin/akun_terdaftar.php";
+        include "../../views/developer/akun_terdaftar.php";
       } elseif (@$_GET['page'] == 'profile') {
         include "views/profile.php";
       } elseif (@$_GET['page'] == 'ak') {
         include "views/profile.php";
       } elseif (@$_GET['page'] == 'haris') {
-        include "../../views/admin/profile.php";
+        include "../../views/developer/profile.php";
       }
 
       ?>
