@@ -196,19 +196,19 @@
             </li>
 
             <li class="nav-item">
-              <a href="?page=akun_terdaftar" class="nav-link">
+              <a href="?page=Postingan" class="nav-link">
                 <i class="nav-icon nav-icon ion ion-person-add"></i>
                 <p>
-                  Akun Terdaftar
+                  Postingan
                 </p>
               </a>
             </li>
 
             <li class="nav-item">
-              <a href="?page=haris" class="nav-link">
+              <a href="?page=inbox" class="nav-link">
                 <i class="nav-icon ion ion-person-add"></i>
                 <p>
-                  haris
+                  inbox
                 </p>
               </a>
             </li>
@@ -231,16 +231,12 @@
       } elseif (@$_GET['page'] == 'profile') {
         include "../../views/admin/profile.php";
       } elseif (@$_GET['page'] == 'pendaftar') {
-        include "../../views/admin/pendaftar.php";
-      } elseif (@$_GET['page'] == 'akun_terdaftar') {
-        include "../../views/admin/akun_terdaftar.php";
-      } elseif (@$_GET['page'] == 'profile') {
-        include "views/profile.php";
-      } elseif (@$_GET['page'] == 'ak') {
-        include "views/profile.php";
-      } elseif (@$_GET['page'] == 'haris') {
-        include "../../views/admin/profile.php";
-      }
+        include "../../views/developer/pendaftar.php";
+      } elseif (@$_GET['page'] == 'Postingan') {
+        include "../../views/developer/Postingan.php";
+      } elseif (@$_GET['page'] == 'inbox') {
+        include "..//../views/developer/inbox.php";
+      } 
 
       ?>
       <!-- Content Header (Page header) -->
