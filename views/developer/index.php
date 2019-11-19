@@ -227,7 +227,7 @@
     <div class="content-wrapper">
       <?php
       if (@$_GET['page'] == 'dashboard') {
-        include "../../views/admin/dashboard.php";
+        include "../../views/developer/dashboard.php";
       } elseif (@$_GET['page'] == 'profile') {
         include "../../views/admin/profile.php";
       } elseif (@$_GET['page'] == 'pendaftar') {
