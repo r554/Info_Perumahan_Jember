@@ -204,15 +204,6 @@
               </a>
             </li>
 
-            <li class="nav-item">
-              <a href="?page=haris" class="nav-link">
-                <i class="nav-icon ion ion-person-add"></i>
-                <p>
-                  haris
-                </p>
-              </a>
-            </li>
-
           </ul>
         </nav>
         <!-- /.sidebar-menu -->
