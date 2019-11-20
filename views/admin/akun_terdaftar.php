@@ -1,3 +1,9 @@
+<?php
+include('../../config/koneksi.php');
+$db  = new database();
+$data_developer = $db->tampil_data();
+?>
+
 <html>
 
 <head>
@@ -21,51 +27,66 @@
     </div><!-- /.container-fluid -->
 
 
-    <!-- Default box -->
-    <div class="card">
-        <div class="card-header">
-            <h3 class="card-title">Title</h3>
+    <!-- tabel akun terdaftar -->
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="card-title"></h3>
 
-            <div class="card-tools">
-                <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip" title="Collapse">
-                    <i class="fas fa-minus"></i></button>
-                <button type="button" class="btn btn-tool" data-card-widget="remove" data-toggle="tooltip" title="Remove">
-                    <i class="fas fa-times"></i></button>
+                    <div class="card-tools">
+                        <div class="input-group input-group-sm" style="width: 150px;">
+                            <input type="text" name="table_search" class="form-control float-right" placeholder="Search">
+
+                            <div class="input-group-append">
+                                <button type="submit" class="btn btn-default"><i class="fas fa-search"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /.card-header -->
+                <div class="card-body table-responsive p-0">
+                    <table class="table table-hover">
+                        <thead>
+                            <tr style="text-align:center">
+                                <th>No</th>
+                                <th>NIK</th>
+                                <th>Nama Developer</th>
+                                <th>Alamat Developer</th>
+                                <th>No Developer</th>
+                                <th>Username Developer</th>
+                                <th>Password Developer</th>
+                                <th colspan="2">Aksi</th>
+                            </tr>
+                        </thead>
+                        <?php
+                        $no = 1;
+                        foreach ($data_developer as $row) {
+                            ?>
+                            <tbody>
+                                <tr>
+                                    <td><?php echo $no++; ?></td>
+                                    <td><?php echo $row['nik']; ?></td>
+                                    <td><?php echo $row['nama_dev']; ?></td>
+                                    <td><?php echo $row['alamat_dev']; ?></td>
+                                    <td><?php echo $row['no_dev']; ?></td>
+                                    <td><?php echo $row['username_dev']; ?></td>
+                                    <td><?php echo $row['password_dev']; ?></td>
+                                    <td><input type="submit" class="btn btn-info btn-xs" value="Edit"></td>
+                                    <td><input type="submit" class="btn btn-danger btn-xs" value="Hapus"></td>
+                                </tr>
+                            </tbody>
+                        <?php
+                        }
+                        ?>
+                    </table>
+                </div>
+                <!-- /.card-body -->
             </div>
+            <!-- /.card -->
         </div>
-
-        <div class="card-body">
-            <form action="" method="POST">
-                <table border="1" style="text-align:center" width=1000>
-                    <tr>
-                        <th>NIK</th>
-                        <th>Nama Developer</th>
-                        <th>Alamat Developer</th>
-                        <th>No Telp</th>
-                        <th>Username Developer</th>
-                        <th>Password Developer</th>
-                        <th colspan="2">Aksi</th>
-                    </tr>
-                    <tr>
-                        <td>1234567891234567</td>
-                        <td>Agus</td>
-                        <td>Alamat Developer</td>
-                        <td>08554321452</td>
-                        <td>root</td>
-                        <td>1234</td>
-                        <td><input type="submit" name="submit" value="edit" class="btn btn-info"></td>
-                        <td><input type="submit" name="submit" value="hapus" class="btn btn-danger"></td>
-                    </tr>
-                </table>
-            </form>
-        </div>
-        <!-- /.card-body -->
-        <div class="card-footer">
-            Footer
-        </div>
-        <!-- /.card-footer-->
     </div>
-    <!-- /.card -->
+
 
 
 </section>
