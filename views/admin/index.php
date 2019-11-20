@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html>
 
@@ -30,6 +34,13 @@
         </li>
         <li class="nav-item d-none d-sm-inline-block">
           <a href="index.php" class="nav-link">Home</a>
+          <div class="info">
+            <a href="#" class="d-block">
+              <?php
+              //session_start();
+              //echo $_SESSION['username_dev']
+              ?>
+            </a>
         </li>
         <li class="nav-item d-none d-sm-inline-block">
           <a href="#" class="nav-link">Contact</a>
@@ -159,7 +170,12 @@
             <img src="../../assets/sb admin/dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
           </div>
           <div class="info">
-            <a href="#" class="d-block">Harisman Sihombing</a>
+            <a href="#" class="d-block">
+              <?php
+              //session_start();
+              echo $_SESSION['username_dev']
+              ?>
+            </a>
           </div>
         </div>
 
@@ -179,7 +195,7 @@
 
             <li class="nav-item">
               <a href="?page=profile" class="nav-link">
-                <i class="nav-icon ion ion-person"></i>
+                <i class="nav-icon fas fa-dove"></i>
                 <p>
                   Profile
                 </p>
@@ -188,7 +204,7 @@
 
             <li class="nav-item">
               <a href="?page=pendaftar" class="nav-link">
-                <i class="nav-icon ion ion-person-add"></i>
+                <i class="nav-icon fas fa-coffee"></i>
                 <p>
                   Pendaftar
                 </p>
@@ -197,9 +213,18 @@
 
             <li class="nav-item">
               <a href="?page=akun_terdaftar" class="nav-link">
-                <i class="nav-icon nav-icon ion ion-person-add"></i>
+                <i class="nav-icon nav-icon fas fa-child"></i>
                 <p>
                   Akun Terdaftar
+                </p>
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a href="http://localhost/Info_Perumahan_Jember/views/login.php" class="nav-link">
+                <i class="nav-icon nav-icon fas fa-battery-three-quarters"></i>
+                <p>
+                  Keluar
                 </p>
               </a>
             </li>
@@ -229,8 +254,9 @@
         include "views/profile.php";
       } elseif (@$_GET['page'] == 'ak') {
         include "views/profile.php";
-      } elseif (@$_GET['page'] == 'haris') {
-        include "../../views/admin/profile.php";
+      } elseif (@$_GET['page'] == 'keluar') {
+        //include "../login.php";
+        header("location:http://localhost/Info_Perumahan_Jember/views/login.php");
       }
 
       ?>
