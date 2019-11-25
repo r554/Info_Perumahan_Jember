@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html>
 
@@ -159,7 +162,11 @@
             <img src="../../assets/sb admin/dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
           </div>
           <div class="info">
-            <a href="#" class="d-block">Harisman Sihombing</a>
+            <a href="index.php" class="d-block">
+            <?php
+              //session_start();
+              echo $_SESSION['username_dev']
+              ?></a>
           </div>
         </div>
 
@@ -178,7 +185,7 @@
             </li>
 
             <li class="nav-item">
-              <a href="?page=akun" class="nav-link">
+              <a href="akun.php" class="nav-link">
                 <i class="nav-icon ion ion-person"></i>
                 <p>
                   Akun
@@ -225,6 +232,7 @@
 
     <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
+    
       <?php
       if (@$_GET['page'] == 'dashboard') {
         include "../../views/developer/dashboard.php";
@@ -242,7 +250,6 @@
       <!-- Content Header (Page header) -->
       <!-- Main content -->
       <section class="content">
-
 
 
 
