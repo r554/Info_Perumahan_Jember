@@ -1,3 +1,8 @@
+<?php
+include "login/koneksi.php";
+?>
+
+
 <!-- Content Header (Page header) -->
 <div class="content-header">
     <div class="container-fluid">
@@ -19,6 +24,8 @@
     <!-- /.content-header -->
 </div>
 </section>
+
+
 
 <html>
 
@@ -49,6 +56,8 @@
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
 </head>
 
+
+
 <body>
     <section class="content">
         <!-- Small boxes (Stat box) -->
@@ -57,13 +66,17 @@
                 <!-- small box -->
                 <div class="small-box bg-info">
                     <div class="inner">
-                        <h3>1</h3>
+                        <?php
+                        $result = mysqli_query($koneksi, "SELECT * from tabel_data_rumah");
+                        $count = mysqli_num_rows($result);
+                        ?>
+                        <h3><?php echo $count ?></h3>
                         <p>Postingan</p>
                     </div>
                     <div class="icon">
                         <i class="ion ion-bag"></i>
                     </div>
-                    <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                    <a href="?page=hitung_postingan" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
                 </div>
             </div>
             <!-- ./col -->
@@ -73,8 +86,11 @@
                 <!-- small box -->
                 <div class="small-box bg-success">
                     <div class="inner">
-                        <h3>1<sup style="font-size: 20px"></sup></h3>
-
+                        <?php
+                        $result = mysqli_query($koneksi, "SELECT * from tabel_developer");
+                        $count = mysqli_num_rows($result);
+                        ?>
+                        <h3><?php echo $count ?></h3>
                         <p>Akun Terdaftar</p>
                     </div>
                     <div class="icon">
@@ -90,8 +106,11 @@
                 <!-- small box -->
                 <div class="small-box bg-warning">
                     <div class="inner">
-                        <h3>0</h3>
-
+                        <?php
+                        $result = mysqli_query($koneksi, "SELECT * from tabel_developer");
+                        $count = mysqli_num_rows($result);
+                        ?>
+                        <h3><?php echo $count ?></h3>
                         <p>Pendaftar</p>
                     </div>
                     <div class="icon">
@@ -120,6 +139,7 @@
             <!-- ./col -->
         </div>
         <!-- /.row -->
+
 
         <section class="col-lg-5 connectedSortable">
             <!-- Map card -->
