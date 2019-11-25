@@ -1,5 +1,11 @@
 <?php
 session_start();
+
+//session_start();
+if ($_SESSION['status'] != "login") {
+  header("location:login/login.php?pesan=belum_login");
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -47,7 +53,7 @@ session_start();
         </li>
       </ul>
 
-      <!-- SEARCH FORM -->
+      <!-- SEARCH FORM ->
       <form class="form-inline ml-3">
         <div class="input-group input-group-sm">
           <input class="form-control form-control-navbar" type="search" placeholder="Search" aria-label="Search">
@@ -57,7 +63,7 @@ session_start();
             </button>
           </div>
         </div>
-      </form>
+      </form>-->
 
       <!-- Right navbar links -->
       <ul class="navbar-nav ml-auto">
@@ -173,7 +179,10 @@ session_start();
             <a href="#" class="d-block">
               <?php
               //session_start();
-              echo $_SESSION['username_dev']
+              if ($_SESSION['status'] != "login") {
+                header("location:login/login.php?pesan=belum_login");
+              }
+              echo $_SESSION['admin_username']
               ?>
             </a>
           </div>
@@ -185,7 +194,7 @@ session_start();
             <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
             <li class="nav-item">
-              <a href="?page=dashboard" class="nav-link active">
+              <a href="?page=dashboard" class="nav-link">
                 <i class="nav-icon fas fa-tachometer-alt"></i>
                 <p>
                   Dashboard
@@ -195,7 +204,7 @@ session_start();
 
             <li class="nav-item">
               <a href="?page=profile" class="nav-link">
-                <i class="nav-icon fas fa-dove"></i>
+                <i class="nav-icon far fa-user-circle"></i>
                 <p>
                   Profile
                 </p>
@@ -204,7 +213,7 @@ session_start();
 
             <li class="nav-item">
               <a href="?page=pendaftar" class="nav-link">
-                <i class="nav-icon fas fa-coffee"></i>
+                <i class="nav-icon fas fa-clipboard-list"></i>
                 <p>
                   Pendaftar
                 </p>
@@ -213,7 +222,7 @@ session_start();
 
             <li class="nav-item">
               <a href="?page=akun_terdaftar" class="nav-link">
-                <i class="nav-icon nav-icon fas fa-child"></i>
+                <i class="nav-icon fas fa-user-edit"></i>
                 <p>
                   Akun Terdaftar
                 </p>
@@ -221,8 +230,8 @@ session_start();
             </li>
 
             <li class="nav-item">
-              <a href="http://localhost/Info_Perumahan_Jember/views/login.php" class="nav-link">
-                <i class="nav-icon nav-icon fas fa-battery-three-quarters"></i>
+              <a href="login/logout.php" class="nav-link">
+                <i class="nav-icon fas fa-chevron-left"></i>
                 <p>
                   Keluar
                 </p>
@@ -237,12 +246,13 @@ session_start();
     </aside>
 
 
-
-
     <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
+
+
+      <!-- Kondisi Halaman -->
       <?php
-      if (@$_GET['page'] == 'dashboard') {
+      if (@$_GET['page'] == 'dashboard' || @$_GET['page'] == '') {
         include "../../views/admin/dashboard.php";
       } elseif (@$_GET['page'] == 'profile') {
         include "../../views/admin/profile.php";
@@ -250,28 +260,23 @@ session_start();
         include "../../views/admin/pendaftar.php";
       } elseif (@$_GET['page'] == 'akun_terdaftar') {
         include "../../views/admin/akun_terdaftar.php";
-      } elseif (@$_GET['page'] == 'profile') {
-        include "views/profile.php";
-      } elseif (@$_GET['page'] == 'ak') {
-        include "views/profile.php";
       } elseif (@$_GET['page'] == 'keluar') {
-        //include "../login.php";
         header("location:http://localhost/Info_Perumahan_Jember/views/login.php");
+      } elseif (@$_GET['page'] == 'hitung_postingan') {
+        include "hitung_postingan.php";
       }
 
       ?>
+
+
       <!-- Content Header (Page header) -->
       <!-- Main content -->
       <section class="content">
-
-
-
 
       </section>
       <!-- /.content -->
     </div>
     <!-- /.content-wrapper -->
-
 
 
     <footer class="main-footer">
