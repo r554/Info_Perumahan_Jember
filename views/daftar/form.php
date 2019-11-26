@@ -18,6 +18,9 @@ placeholder="isikan nik">   <br>
         No Telepon<input type="text" name="no_dev"
         placeholder="isikan no_dev">   <br>
 
+        Email<input type="text" name="Email"
+        placeholder="isikan Email">   <br>
+
  Upload foto Profile <input type="file" name="foto_profile_dev"
         placeholder="foto ">   <br>
 
@@ -38,6 +41,7 @@ placeholder="isikan nik">   <br>
         <p>
             <input type="submit"name="btn_Submit"
             value="submit" class="btn btn-danger">
+           
         </p>
 
         

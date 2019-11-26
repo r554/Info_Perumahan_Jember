@@ -10,6 +10,6 @@ $konek = mysqli_connect("localhost","root","","ipj");
 if(!$konek){
 echo "gagal konek ke db!!!";
 } else{
-    echo "berhasil";
+    echo "Pendaftaran Anda Sudah Kami Terima, Silahkan Tunggu Konfirmasi Selanjutnya";
 }
 ?>

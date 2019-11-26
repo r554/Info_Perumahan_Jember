@@ -24,6 +24,9 @@ placeholder="kode perusahaan">   <br>
         Informasi Perumahan <input type="text" name="informasi_perumahan"
         placeholder="informasi tambahan">   <br>
 
+        Email <input type="text" name="Email"
+        placeholder="Email Perumahan">   <br>
+
         Link Vidio Profile  <input type="text" name="vidio_profile"
         placeholder="link vidio">   <br>
 
