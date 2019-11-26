@@ -1,6 +1,14 @@
-<section class="content-header">
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8">
+</head>
+<body>
+
+    <section class="content-header">
     <div class="container-fluid">
-        <div class="row mb-2">
+        <div class="row mb-3">
             <div class="col-sm-6">
                 <h1>Pendaftar</h1>
             </div>
@@ -11,29 +19,48 @@
                 </ol>
             </div>
         </div>
-    </div>
-    <!-- /.container-fluid -->
+    </div><!-- /.container-fluid -->
 
-    <!-- Default box -->
-    <div class="card">
+        <div class="card">
         <div class="card-header">
-            <h3 class="card-title">Title</h3>
+            <h3 class="card-title">Pendaftar</h3>
 
-            <div class="card-tools">
-                <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip" title="Collapse">
-                    <i class="fas fa-minus"></i></button>
-                <button type="button" class="btn btn-tool" data-card-widget="remove" data-toggle="tooltip" title="Remove">
-                    <i class="fas fa-times"></i></button>
-            </div>
         </div>
         <div class="card-body">
-            Start creating your amazing application!
+            <!-- isi card -->
+            <div class="table-responsive">
+            <div class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+
+              <table align="center">
+                <tr>
+                  <th>No.</th>
+                  <th>Nama</th>
+                  <th>Email</th>
+                </tr>
+                <tr>
+                  <td>1</td>
+                  <td>Perumahan Tegal Gede</td>
+                  <td>tegalgede1@gmail.com</td>
+                </tr>
+                <tr>
+                  <td>2</td>
+                  <td>Perumahan Tegal Boto</td>
+                  <td>tegalboto1@gmail.com</td>
+                </tr>
+                <tr>
+                  <td>3</td>
+                  <td>Perum</td>
+                  <td>gmail</td>
+                </tr> 
+              </table>
+
+            </div>
+          </div>
+
         </div>
         <!-- /.card-body -->
-        <div class="card-footer">
-            Footer
-        </div>
-        <!-- /.card-footer-->
     </div>
-    <!-- /.card -->
 </section>
+
+</body>
+</html>

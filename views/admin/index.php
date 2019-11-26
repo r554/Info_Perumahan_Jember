@@ -264,6 +264,10 @@ if ($_SESSION['status'] != "login") {
         header("location:http://localhost/Info_Perumahan_Jember/views/login.php");
       } elseif (@$_GET['page'] == 'hitung_postingan') {
         include "hitung_postingan.php";
+      } elseif (@$_GET['page'] == 'pendaftar2'){
+        include "../../views/admin/pendaftar2.php";
+      } elseif (@$_GET['page'] == 'pendaftar3'){
+        include "../../views/admin/pendaftar3.php";
       }
 
       ?>
