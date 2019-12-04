@@ -1,6 +1,13 @@
 <?php
 session_start();
+
+if ($_SESSION['status'] != "login") {
+  header ("location:login/login.php?pesan=belum_login");
+}
+
 ?>
+
+
 <!DOCTYPE html>
 <html>
 
@@ -165,6 +172,9 @@ session_start();
             <a href="index.php" class="d-block">
             <?php
               //session_start();
+              if ($_SESSION['status'] != "login") {
+                header("location:login/login.php?pesan=belum_login");
+              }
               echo $_SESSION['username_dev']
               ?></a>
           </div>
@@ -176,7 +186,7 @@ session_start();
             <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
             <li class="nav-item">
-              <a href="?page=dashboard" class="nav-link active">
+              <a href="?page=dashboard" class="nav-link ">
                 <i class="nav-icon fas fa-tachometer-alt"></i>
                 <p>
                   Dashboard
@@ -220,6 +230,15 @@ session_start();
               </a>
             </li>
 
+            <li class="nav-item">
+              <a href="login/logout.php" class="nav-link">
+                <i class="nav-icon ion ion-person-add"></i>
+                <p>
+                  keluar
+                </p>
+              </a>
+            </li>
+
           </ul>
         </nav>
         <!-- /.sidebar-menu -->
@@ -244,7 +263,13 @@ session_start();
         include "../../views/developer/Postingan.php";
       } elseif (@$_GET['page'] == 'inbox') {
         include "..//../views/developer/inbox.php";
-      } 
+      } elseif (@$_GET['page'] == 'tambahpostingan') {
+        include "inputdatarumah.php";
+      }elseif (@$_GET['page'] == 'editdatarumah') {
+        include "editdatarumah.php";
+      }elseif (@$_GET['page'] == 'postingan') {
+        include "Postingan.php";
+      }
 
       ?>
       <!-- Content Header (Page header) -->
