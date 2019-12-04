@@ -1,20 +1,19 @@
 <?php
 session_start();
+include 'Login/koneksi.php';
 
 if ($_SESSION['status'] != "login") {
-  header ("location:login/login.php?pesan=belum_login");
+  header("location:login/login.php?pesan=belum_login");
 }
 
 ?>
-
-
 <!DOCTYPE html>
 <html>
 
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>AdminLTE 3 | Blank Page</title>
+  <title>Info Perumahan Jember</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -166,15 +165,13 @@ if ($_SESSION['status'] != "login") {
         <!-- Sidebar user (optional) -->
         <div class="user-panel mt-3 pb-3 mb-3 d-flex">
           <div class="image">
-            <img src="../../assets/sb admin/dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
+            <img src="img/<?php echo $_SESSION['gbr']; ?>" class="img-circle elevation-2" alt="User Image">
+            <!--<img src="../../assets/sb admin/dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">-->
           </div>
           <div class="info">
             <a href="index.php" class="d-block">
-            <?php
+              <?php
               //session_start();
-              if ($_SESSION['status'] != "login") {
-                header("location:login/login.php?pesan=belum_login");
-              }
               echo $_SESSION['username_dev']
               ?></a>
           </div>
@@ -186,7 +183,7 @@ if ($_SESSION['status'] != "login") {
             <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
             <li class="nav-item">
-              <a href="?page=dashboard" class="nav-link ">
+              <a href="?page=dashboard" class="nav-link">
                 <i class="nav-icon fas fa-tachometer-alt"></i>
                 <p>
                   Dashboard
@@ -195,7 +192,7 @@ if ($_SESSION['status'] != "login") {
             </li>
 
             <li class="nav-item">
-              <a href="akun.php" class="nav-link">
+              <a href="?page=akun" class="nav-link">
                 <i class="nav-icon ion ion-person"></i>
                 <p>
                   Akun
@@ -213,7 +210,7 @@ if ($_SESSION['status'] != "login") {
             </li>
 
             <li class="nav-item">
-              <a href="?page=Postingan" class="nav-link">
+              <a href="?page=tampil_postingan" class="nav-link">
                 <i class="nav-icon nav-icon ion ion-person-add"></i>
                 <p>
                   Postingan
@@ -231,7 +228,7 @@ if ($_SESSION['status'] != "login") {
             </li>
 
             <li class="nav-item">
-              <a href="login/logout.php" class="nav-link">
+              <a href="Login/logout.php" class="nav-link">
                 <i class="nav-icon ion ion-person-add"></i>
                 <p>
                   keluar
@@ -251,24 +248,22 @@ if ($_SESSION['status'] != "login") {
 
     <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
-    
+
       <?php
-      if (@$_GET['page'] == 'dashboard') {
+      if (@$_GET['page'] == 'dashboard' || @$_GET['page'] == '') {
         include "../../views/developer/dashboard.php";
-      } elseif (@$_GET['page'] == 'profile') {
-        include "../../views/developer/akun.php";
-      } elseif (@$_GET['page'] == 'pendaftar') {
+      } elseif (@$_GET['page'] == 'akun') {
+        include "akun.php";
+      } elseif (@$_GET['page'] == 'profil_perusahaan') {
         include "../../views/developer/profil_perusahaan.php";
       } elseif (@$_GET['page'] == 'Postingan') {
-        include "../../views/developer/Postingan.php";
+        include "../../views/developer/postingan.php";
       } elseif (@$_GET['page'] == 'inbox') {
         include "..//../views/developer/inbox.php";
-      } elseif (@$_GET['page'] == 'tambahpostingan') {
-        include "inputdatarumah.php";
-      }elseif (@$_GET['page'] == 'editdatarumah') {
-        include "editdatarumah.php";
-      }elseif (@$_GET['page'] == 'postingan') {
-        include "Postingan.php";
+      } elseif (@$_GET['page'] == 'nik') {
+        include "editprofil.php";
+      } elseif (@$_GET['page'] == 'tampil_postingan') {
+        include "../../views/developer/tampil_postingan.php";
       }
 
       ?>

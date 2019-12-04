@@ -1,6 +1,6 @@
 <?php
-include '../developer/session.php';
-include 'Login/koneksi.php';
+include 'login/session.php';
+include 'login/koneksi.php';
 ?>
 
 <section class="content-header">
@@ -18,14 +18,17 @@ include 'Login/koneksi.php';
     </div>
   </div>
   <!-- /.container-fluid -->
+
+
   <!-- Main content -->
   <section class="content">
 
     <?php
-
+    // Mengambil id SESSION
     $id = (int) $_SESSION['id'];
-
-    $query = mysqli_query($koneksi, "select * from tabel_developer where nik = '$id' ");
+    // Mencocokkan Id dengan Database
+    $query = mysqli_query($koneksi, "select * from tabel_admin where kd_admin = '$id' ");
+    // Memngambil  data di Database setelah id di cocokan
     $fetch = mysqli_fetch_array($query);
     //var_dump($id);
     ?>
@@ -45,53 +48,36 @@ include 'Login/koneksi.php';
       <div class="card-body">
         <table border="0">
           <tr>
-            <td rowspan="5"><img src="img/<?php echo $fetch['foto_profil_dev']; ?>" width="180px" height="180px"></td>
             <td>Nama Developer</td>
             <td></td>
             <td>:</td>
             <td></td>
-            <td><?php echo $fetch['nama_dev']; ?></td>
-            <td></td>
-            <td></td>
-            <td><a href="editprofil.php?nik=<?php echo $fetch['nik']; ?>"><input type="button" value="edit" class="btn btn-info"><a></td>
-            <td></td>
-            <td></td>
-
+            <td><?php echo $fetch['nama_admin']; ?></td>
           </tr>
           <tr>
             <td>Alamat Developer</td>
             <td></td>
             <td>:</td>
             <td></td>
-            <td><?php echo $fetch['alamat_dev']; ?></td>
-          </tr>
-          <tr>
-            <td>No Telphon</td>
-            <td></td>
-            <td>:</td>
-            <td></td>
-            <td><?php echo $fetch['no_dev']; ?></td>
+            <td><?php echo $fetch['alamat_rumah']; ?></td>
           </tr>
           <tr>
             <td>Username</td>
             <td></td>
             <td>:</td>
             <td></td>
-            <td><?php echo $fetch['username_dev']; ?></td>
+            <td><?php echo $fetch['admin_username']; ?></td>
           </tr>
           <tr>
             <td>Password</td>
             <td></td>
             <td>:</td>
             <td></td>
-            <td><?php echo $fetch['password_dev']; ?></td>
-
+            <td><?php echo $fetch['admin_password']; ?></td>
           </tr>
           <tr>
             <td>
-
-
-
+              <a href="edit_profil.php?kd_admin=<?php echo $fetch['kd_admin']; ?>"><input type="button" value="edit" class="btn btn-info"><a>
             </td>
           </tr>
         </table>
@@ -101,6 +87,4 @@ include 'Login/koneksi.php';
     <!-- /.card -->
   </section>
   <!-- /.content -->
-
-
   <!-- /.content-wrapper -->

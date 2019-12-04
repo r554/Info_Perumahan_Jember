@@ -7,14 +7,13 @@ include 'koneksi.php';
 //include '../config/koneksi.php';
 //$conn = new database();
 
-
-
 // menangkap data yang dikirim dari form
 $username = $_POST['username'];
 $password = $_POST['password'];
 
 // menyeleksi data admin dengan username dan password yang sesuai
 $data = mysqli_query($koneksi, "select * from tabel_developer where username_dev='$username' and password_dev='$password'");
+// mengambil data di dalam tabel
 $row = mysqli_fetch_array($data);
 // menghitung jumlah data yang ditemukan
 $cek = mysqli_num_rows($data);
@@ -24,8 +23,10 @@ if ($cek > 0) {
     $_SESSION['username_dev'] = $username;
     $_SESSION['id'] = $row['nik'];
     $_SESSION['status'] = "login";
+    $_SESSION['gbr'] = $row['foto_profil_dev'];
     echo $_SESSION['username_dev'];
-    header("location:developer/index.php");
+    echo $_SESSION['gbr'];
+    header("location:../index.php");
 } else {
-    header("location:index.php?pesan=gagal");
+    header("location:../index.php?pesan=gagal");
 }
