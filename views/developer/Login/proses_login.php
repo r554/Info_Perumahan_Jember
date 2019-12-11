@@ -19,14 +19,22 @@ $row = mysqli_fetch_array($data);
 $cek = mysqli_num_rows($data);
 
 if ($cek > 0) {
-    session_start();
-    $_SESSION['username_dev'] = $username;
-    $_SESSION['id'] = $row['nik'];
-    $_SESSION['status'] = "login";
-    $_SESSION['gbr'] = $row['foto_profil_dev'];
-    echo $_SESSION['username_dev'];
-    echo $_SESSION['gbr'];
-    header("location:../index.php");
+
+    if ($row['status_developer'] == '1') {
+        session_start();
+        $_SESSION['username_dev'] = $username;
+        $_SESSION['id'] = $row['nik'];
+        $_SESSION['nama'] = $row['nama_dev'];
+        $_SESSION['status'] = "login";
+        $_SESSION['gbr'] = $row['foto_profil_dev'];
+        echo $_SESSION['username_dev'];
+        echo $_SESSION['gbr'];
+        echo $_SESSION['nama'];
+        header("location:../index.php");
+    } else {
+        header("location:../index.php?pesan=data_kosong");
+        //echo 'user';
+    }
 } else {
     header("location:../index.php?pesan=gagal");
 }

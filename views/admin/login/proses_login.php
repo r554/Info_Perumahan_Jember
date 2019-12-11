@@ -23,7 +23,11 @@ if ($cek > 0) {
     $_SESSION['admin_username'] = $username;
     $_SESSION['id'] = $row['kd_admin'];
     $_SESSION['status'] = "login";
+    $_SESSION['gbr'] = $row['foto_profil'];
+    $_SESSION['nama_admin'] = $row['nama_admin'];
     echo $_SESSION['admin_username'];
+    echo $_SESSION['gbr'];
+    echo $_SESSION['nama_admin'];
     header("location:../index.php");
 } else {
     header("location:../index.php?pesan=gagal");

@@ -135,16 +135,18 @@ include 'Login/koneksi.php';
                 // Upload Foto profile Developer
                 $nama_file = $_FILES['gambar']['name'];
                 $source = $_FILES['gambar']['tmp_name'];
-                $folder = './img/';
+                $folder = './img/data_developer/foto_profil/';
                 move_uploaded_file($source, $folder . $nama_file);
                 // Upload Foto KTP Developer
                 $nama_file2 = $_FILES['gambar2']['name'];
                 $source2 = $_FILES['gambar2']['tmp_name'];
-                move_uploaded_file($source2, $folder . $nama_file2);
+                $folder2 = './img/data_developer/foto_ktp/';
+                move_uploaded_file($source2, $folder2 . $nama_file2);
                 // Upload Foto Diri dan KTP Developer
                 $nama_file3 = $_FILES['gambar3']['name'];
                 $source3 = $_FILES['gambar3']['tmp_name'];
-                move_uploaded_file($source3, $folder . $nama_file3);
+                $folder3 = './img/data_developer/foto_diri_ktp/';
+                move_uploaded_file($source3, $folder3 . $nama_file3);
 
                 // Query untuk memasukan data ke Database
                 $insert = mysqli_query($koneksi, "insert into tabel_developer values ('$nik','$nama_dev','$alamat_dev', '$no_dev', '', '$nama_file', '$nama_file2', '$nama_file3', '', '$username_dev', '$password_dev')");

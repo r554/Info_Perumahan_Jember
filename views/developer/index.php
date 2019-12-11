@@ -7,6 +7,7 @@ if ($_SESSION['status'] != "login") {
 }
 
 ?>
+
 <!DOCTYPE html>
 <html>
 
@@ -165,14 +166,14 @@ if ($_SESSION['status'] != "login") {
         <!-- Sidebar user (optional) -->
         <div class="user-panel mt-3 pb-3 mb-3 d-flex">
           <div class="image">
-            <img src="img/<?php echo $_SESSION['gbr']; ?>" class="img-circle elevation-2" alt="User Image">
+            <img src="img/data_developer/foto_profil/<?php echo $_SESSION['gbr']; ?>" class="img-circle elevation-2" alt="User Image">
             <!--<img src="../../assets/sb admin/dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">-->
           </div>
           <div class="info">
             <a href="index.php" class="d-block">
               <?php
               //session_start();
-              echo $_SESSION['username_dev']
+              echo $_SESSION['nama']
               ?></a>
           </div>
         </div>
@@ -201,17 +202,17 @@ if ($_SESSION['status'] != "login") {
             </li>
 
             <li class="nav-item">
-              <a href="?page=profil_perusahaan" class="nav-link">
+              <a href="?page=profil_perumahan" class="nav-link">
                 <i class="nav-icon ion ion-person-add"></i>
                 <p>
-                  Profil perusahaan
+                  Profil Perumahan
                 </p>
               </a>
             </li>
 
             <li class="nav-item">
               <a href="?page=tampil_postingan" class="nav-link">
-                <i class="nav-icon nav-icon ion ion-person-add"></i>
+                <i class="nav-icon far fa-clipboard"></i>
                 <p>
                   Postingan
                 </p>
@@ -220,7 +221,7 @@ if ($_SESSION['status'] != "login") {
 
             <li class="nav-item">
               <a href="?page=inbox" class="nav-link">
-                <i class="nav-icon ion ion-person-add"></i>
+                <i class="nav-icon far fa-envelope"></i>
                 <p>
                   inbox
                 </p>
@@ -229,7 +230,7 @@ if ($_SESSION['status'] != "login") {
 
             <li class="nav-item">
               <a href="Login/logout.php" class="nav-link">
-                <i class="nav-icon ion ion-person-add"></i>
+                <i class="nav-icon fas fa-arrow-left"></i>
                 <p>
                   keluar
                 </p>
@@ -251,20 +252,23 @@ if ($_SESSION['status'] != "login") {
 
       <?php
       if (@$_GET['page'] == 'dashboard' || @$_GET['page'] == '') {
-        include "../../views/developer/dashboard.php";
+        include "dashboard.php";
       } elseif (@$_GET['page'] == 'akun') {
         include "akun.php";
-      } elseif (@$_GET['page'] == 'profil_perusahaan') {
-        include "../../views/developer/profil_perusahaan.php";
-      } elseif (@$_GET['page'] == 'Postingan') {
-        include "../../views/developer/postingan.php";
-      } elseif (@$_GET['page'] == 'inbox') {
-        include "..//../views/developer/inbox.php";
-      } elseif (@$_GET['page'] == 'nik') {
-        include "editprofil.php";
+      } elseif (@$_GET['page'] == 'profil_perumahan') {
+        include "profil_perumahan.php";
       } elseif (@$_GET['page'] == 'tampil_postingan') {
-        include "../../views/developer/tampil_postingan.php";
+        include "tampil_postingan.php";
+      } elseif (@$_GET['page'] == 'tambah_postingan') {
+        include "tambah_postingan.php";
+      } elseif (@$_GET['page'] == 'edit_postingan') {
+        include "edit_postingan.php";
+      } elseif (@$_GET['page'] == 'edit_akun') {
+        include "edit_akun.php";
+      } elseif (@$_GET['page'] == 'inbox') {
+        include "inbox.php";
       }
+
 
       ?>
       <!-- Content Header (Page header) -->
@@ -281,7 +285,7 @@ if ($_SESSION['status'] != "login") {
 
 
     <footer class="main-footer">
-      <h10><b>Copyright&copy;</b>Info Perumahan Jember</h10>
+      <h9>© 2019 Copyright: InfoPerumahanJember</h9>
     </footer>
 
 

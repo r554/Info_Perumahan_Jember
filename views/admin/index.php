@@ -1,7 +1,6 @@
 <?php
 session_start();
 
-//session_start();
 if ($_SESSION['status'] != "login") {
   header("location:login/login.php?pesan=belum_login");
 }
@@ -154,11 +153,11 @@ if ($_SESSION['status'] != "login") {
             <a href="#" class="dropdown-item dropdown-footer">See All Notifications</a>
           </div>
         </li>
-        <li class="nav-item">
+        <!--<li class="nav-item">
           <a class="nav-link" data-widget="control-sidebar" data-slide="true" href="#">
             <i class="fas fa-th-large"></i>
           </a>
-        </li>
+        </li>-->
       </ul>
     </nav>
     <!-- /.navbar -->
@@ -175,7 +174,7 @@ if ($_SESSION['status'] != "login") {
         <!-- Sidebar user (optional) -->
         <div class="user-panel mt-3 pb-3 mb-3 d-flex">
           <div class="image">
-            <img src="../../assets/sb admin/dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
+            <img src="img/foto_profil/<?php echo $_SESSION['gbr']; ?>" class="img-circle elevation-2" alt="User Image">
           </div>
           <div class="info">
             <a href="#" class="d-block">
@@ -184,7 +183,7 @@ if ($_SESSION['status'] != "login") {
               if ($_SESSION['status'] != "login") {
                 header("location:login/login.php?pesan=belum_login");
               }
-              echo $_SESSION['admin_username']
+              echo $_SESSION['nama_admin']
               ?>
             </a>
           </div>
@@ -257,9 +256,9 @@ if ($_SESSION['status'] != "login") {
       if (@$_GET['page'] == 'dashboard' || @$_GET['page'] == '') {
         include "../../views/admin/dashboard.php";
       } elseif (@$_GET['page'] == 'profile') {
-        include "../../views/admin/akun2.php";
+        include "../../views/admin/akun.php";
       } elseif (@$_GET['page'] == 'pendaftar') {
-        include "../../views/admin/pendaftar.php";
+        include "akun_developer.php";
       } elseif (@$_GET['page'] == 'akun_terdaftar') {
         include "../../views/admin/akun_terdaftar.php";
       } elseif (@$_GET['page'] == 'hitung_postingan') {
@@ -268,6 +267,14 @@ if ($_SESSION['status'] != "login") {
         include "../../views/admin/pendaftar2.php";
       } elseif (@$_GET['page'] == 'pendaftar3') {
         include "../../views/admin/pendaftar3.php";
+      } elseif (@$_GET['page'] == 'edit_akun') {
+        include "edit_profil.php";
+      } elseif (@$_GET['page'] == 'lihat_akun') {
+        include "tampilan_detail_akun_developer.php";
+      } elseif (@$_GET['page'] == 'hapus_akun') {
+        include "hapus_akun.php";
+      } elseif (@$_GET['page'] == 'lihat_akun_terdaftar') {
+        include "tampilan_detail_akun_terdaftar.php";
       }
 
       ?>

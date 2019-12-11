@@ -155,18 +155,17 @@ $r = mysqli_fetch_array($data);
                     move_uploaded_file($source, $folder . $nama_file);
                     $update = mysqli_query($koneksi, "UPDATE tabel_developer set nama_dev='$nama_dev', alamat_dev='$alamat_dev', no_dev='$no_dev', Email='', foto_profil_dev='$nama_file', foto_ktp_dev='', foto_diri_dev='', status_developer='', username_dev='$username_dev', password_dev='$password_dev' where nik='$nik'");
                     //$update = mysqli_query($koneksi, "UPDATE tabel_developer set nama_dev='$nama_dev', alamat_dev='$alamat_dev', no_dev='$no_dev', Email='', foto_profil_dev='$nama_file', foto_ktp_dev='', foto_diri_dev='', status_developer='', username_dev='$username_dev', password_dev='$password_dev' where nik='$nik'");
-                }
-                if ($update) {
-                    echo 'berhasil';
+                    if ($update) {
+                        echo 'berhasil';
+                    } else {
+                        echo 'Gagal';
+                        var_dump($nik);
+                    }
                 } else {
-                    echo 'Gagal';
-                    var_dump($nik);
+                    $update = mysqli_query($koneksi, "UPDATE tabel_developer set nama_dev='$nama_dev', alamat_dev='$alamat_dev', no_dev='$no_dev', Email='', foto_profil_dev='$nama_file', foto_ktp_dev='', foto_diri_dev='', status_developer='', username_dev='$username_dev', password_dev='$password_dev' where nik='$nik'");
                 }
-
-                // Query untuk memasukan data ke Database
             }
             ?>
-
 
         </div>
     </div>

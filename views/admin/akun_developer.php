@@ -18,7 +18,7 @@ include 'login/koneksi.php';
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
                         <li class="breadcrumb-item"><a href="#">Home</a></li>
-                        <li class="breadcrumb-item active">Akun Developer</li>
+                        <li class="breadcrumb-item active">Pendaftar Akun</li>
                     </ol>
                 </div>
             </div>
@@ -28,7 +28,7 @@ include 'login/koneksi.php';
     <section class="content">
         <div class="card">
             <div class="card-header">
-                <h3 class="card-title">Akun Developer Info Perumahan Jember</h3>
+                <h3 class="card-title">Pendaftar Akun Info Perumahan Jember</h3>
             </div>
             <div class="card-body">
                 <form action="" method="POST" enctype="multipart/form-data">
@@ -38,12 +38,12 @@ include 'login/koneksi.php';
                             <th>Nama</th>
                             <th>Alamat</th>
                             <th>No Telepon</th>
-                            <th>Nama Perumahan</th>
+                            <th>Email</th>
                             <th colspan="2">Aksi</th>
                         </tr>
 
                         <?php
-                        $seleksi = mysqli_query($koneksi, "SELECT * FROM tabel_developer where status_developer = 1 ");
+                        $seleksi = mysqli_query($koneksi, "SELECT * FROM tabel_developer where status_developer = 0 ");
                         //$row = mysqli_fetch_array($seleksi);
 
                         //$fetch = mysqli_fetch_array($query);
@@ -54,9 +54,9 @@ include 'login/koneksi.php';
                                 <td><?php echo $row['nama_dev']; ?></td>
                                 <td><?php echo $row['alamat_dev']; ?></td>
                                 <td><?php echo $row['no_dev']; ?></td>
-                                <td><?php echo $row['status_developer']; ?></td>
+                                <td><?php echo $row['Email']; ?></td>
                                 <td>
-                                    <a href="?page=lihat_akun_terdaftar&?nik=<?php echo $row['nik'] ?>" class="btn btn-info btn-sm ">
+                                    <a href="?page=lihat_akun&?nik=<?php echo $row['nik'] ?>" class="btn btn-info btn-sm ">
                                         <span class="fas fa-pen-square"></span>
                                     </a>
                                 </td>

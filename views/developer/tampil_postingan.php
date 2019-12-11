@@ -30,7 +30,7 @@ include('Login/koneksi.php');
             </div>
             <div class="card-body">
 
-                <a href="?page=Postingan">
+                <a href="?page=tambah_postingan">
                     <input type="submit" class="btn btn-info btn-xs" value="Tambah Postingan">
                 </a>
                 <div class="card-body table-responsive p-0">
@@ -57,18 +57,27 @@ include('Login/koneksi.php');
                         while ($row = mysqli_fetch_array($query)) {
                             ?>
                             <tr>
-                                <td><?php echo $row['kd_data_rumah']; ?></td>
+                                <td><?php echo $row['judul_postingan']; ?></td>
                                 <td><?php echo $row['tipe_rumah']; ?></td>
                                 <td><?php echo $row['harga']; ?></td>
                                 <td><?php echo $row['jumlah_unit_rumah']; ?></td>
                                 <td><?php echo $row['status']; ?></td>
-                                <td><input type="submit" class="btn btn-info btn-xs" value="Edit"></td>
-                                <td><input type="submit" class="btn btn-danger btn-xs" value="Hapus"></td>
+                                <td>
+                                    <a href="?page=edit_postingan&?kd_data_rumah=<?php echo $row['kd_data_rumah'] ?>" class="btn btn-info ">
+                                        <span class="fas fa-pen-square"></span>
+                                    </a>
+                                </td>
+                                <td>
+                                    <a href="hapus_postingan.php?kd_data_rumah=<?php echo $row['kd_data_rumah'] ?>" class="btn btn-danger ">
+                                        <span class="far fa-trash-alt"></span>
+                                    </a>
+                                </td>
+
+
                             </tr>
                         <?php } ?>
                     </table>
                 </div>
-
             </div>
             <!-- /.card-body -->
         </div>

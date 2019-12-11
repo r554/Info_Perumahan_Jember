@@ -6,9 +6,6 @@ include 'Login/koneksi.php'
 
 <head>
     <title>inbox</title>
-    <link rel="stylesheet" href="../../assets/css/bootstrap.css">
-    <script type="text/javascript" src="../../assets/js/jquery.js"></script>
-    <script type="text/javascript" src="../../assets/js/bootstrap.js"></script>
 </head>
 
 <body>
@@ -44,16 +41,16 @@ include 'Login/koneksi.php'
                     while ($row = mysqli_fetch_array($query)) {
                         ?>
                         <tr>
+                            <td><?php echo $row['nik']; ?></td>
                             <td><?php echo $row['nama_dev']; ?></td>
                             <td><?php echo $row['alamat_dev']; ?></td>
-                            <td><?php echo $row['username_dev']; ?></td>
-                            <td><?php echo $row['password_dev']; ?></td>
+                            <td><?php echo $row['no_dev']; ?></td>
                             <td><img src="img/<?php echo $row['foto_profil_dev']; ?>" width="100px" height="100px"></td>
                             <td><img src="img/<?php echo $row['foto_ktp_dev']; ?>" width="100px" height="100px"></td>
                             <td><img src="img/<?php echo $row['foto_diri_dev']; ?>" width="100px" height="100px"></td>
                             <td>
                                 <a href="edit.php?nik=<?php echo $row['nik'] ?>" class="btn btn-danger">
-                                    <span class="far fa-trash-alt"></span>
+                                    <span class="far fa-trash-alt">asd</span>
                                 </a>
                             </td>
                             <td>
@@ -69,6 +66,53 @@ include 'Login/koneksi.php'
         </div>
         <!-- /.card -->
     </section>
+
+    <div class="card card-default">
+        <div class="card-header">
+            <h3 class="card-title">Select2 (Default Theme)</h3>
+
+            <div class="card-tools">
+                <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i></button>
+                <button type="button" class="btn btn-tool" data-card-widget="remove"><i class="fas fa-remove"></i></button>
+            </div>
+        </div>
+        <!-- /.card-header -->
+        <div class="card-body">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label>Nama Perumahan</label><br>
+                        <input type="text" style="width: 100%;">
+                    </div>
+                    <!-- /.form-group -->
+                    <div class="form-group">
+                        <label>Alamat Kantor Pemasaran</label>
+                        <input type="text" style="width: 100%;"><br>
+                    </div>
+                    <!-- /.form-group -->
+                </div>
+                <!-- /.col -->
+                <div class="col-md-6">
+                    <label for="">Hubungkan Profil Perumahan Dengan Social Media:</label>
+                    <div class="form-group">
+                        <label>Instagram</label><br>
+                        <input type="text" style="width: 100%;">
+                    </div>
+                    <!-- /.form-group -->
+                    <div class="form-group">
+                        <label for="">coba</label><br>
+                        <input type="text" style="width: 100%;">
+                    </div>
+                    <!-- /.form-group -->
+                </div>
+                <!-- /.col -->
+            </div>
+            <!-- /.row -->
+        </div>
+        <!-- /.card-body -->
+    </div>
+    <!-- /.card -->
+
 </body>
 
 
