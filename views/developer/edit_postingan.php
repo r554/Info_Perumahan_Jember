@@ -85,7 +85,7 @@ $r = mysqli_fetch_array($data);
                                         <input type="file" name="foto_4">
                                     </div>
                                     <div class="form-group">
-                                        <label for="">Foto Kamat Tidur</label><br>
+                                        <label for="">Foto Kamar Tidur</label><br>
                                         <img src="img/postingan/<?php echo $r['foto_5']; ?>" width="300px"
                                             height="300px" style="width: 100%;">
                                         <input type="file" name="foto_5">

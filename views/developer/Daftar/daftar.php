@@ -53,7 +53,7 @@ include '../Login/koneksi.php';
                             oninput="setCustomValidity('')">
                     </div>
                     <div class="form-row">
-                        <input type="text" name="password" placeholder="Password" required oninvalid="this.setCustomValidity('Kolom Password Tidak Boleh Kosong')"
+                        <input type="password" name="password" placeholder="Password" required oninvalid="this.setCustomValidity('Kolom Password Tidak Boleh Kosong')"
                             oninput="setCustomValidity('')">
                     </div>
                 </div>
