@@ -1,106 +1,108 @@
-<!DOCTYPE html>
 <html>
 
 <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>IPJ | Log in</title>
-    <!-- Tell the browser to be responsive to screen width -->
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="../../../assets/sb admin/plugins/fontawesome-free/css/all.min.css">
-    <!-- Ionicons -->
-    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
-    <!-- icheck bootstrap -->
-    <link rel="stylesheet" href="../../../assets/sb admin/plugins/icheck-bootstrap/icheck-bootstrap.min.css">
-    <!-- Theme style -->
-    <link rel="stylesheet" href="../../../assets/sb admin/dist/css/adminlte.min.css">
-    <!-- Google Font: Source Sans Pro -->
-    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+    <title>Login | S</title>
+    <!-- Mobile Specific Metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <!-- Font-->
+    <link rel="stylesheet" type="text/css" href="css/sourcesanspro-font.css">
+    <!-- Main Style Css -->
+    <link rel="stylesheet" href="css/style.css" />
 </head>
 
-<body class="hold-transition login-page">
-
-    <!-- cek pesan notifikasi -->
-    <?php
-    if (isset($_GET['pesan'])) {
-        if ($_GET['pesan'] == "gagal") {
-            echo "Login gagal! username dan password salah!";
-        } else if ($_GET['pesan'] == "logout") {
-            echo "Anda telah berhasil logout";
-        } else if ($_GET['pesan'] == "belum_login") {
-            echo "Anda harus login untuk mengakses halaman admin";
-        } else if ($_GET['pesan'] == "data_kosong") {
-            echo "Username Tidak Ada";
-        }
-    }
-    ?>
-
-
-    <div class="login-box">
-        <div class="login-logo">
-            <a href="proses_login.php"><b>Login</b>Sistem</a>
-        </div>
-        <!-- /.login-logo -->
-        <div class="card">
-            <div class="card-body login-card-body">
-                <p class="login-box-msg">Sign in to start your session</p>
-
-                <form action="proses_login.php" method="post">
-                    <div class="input-group mb-3">
-                        <input type="text" class="form-control" placeholder="Username" name="username">
-                        <div class="input-group-append">
-                            <div class="input-group-text">
-                                <span class="fas fa-envelope"></span>
-                            </div>
-                        </div>
+<body class="form-v8">
+    <div class="page-content">
+        <?php
+		if (isset($_GET['pesan'])) {
+			if ($_GET['pesan'] == "gagal") {
+				echo "<script>alert('Login Gagal Username atau Password Salah');window.location='login.php'</script>";
+			} else if ($_GET['pesan'] == "logout") {
+                echo "<script>alert('Anda Telah Berhasil Logout');window.location='login.php'</script>";
+			} else if ($_GET['pesan'] == "belum_login") {
+                echo "<script type='text/javascript'>alert('Anda Harus Login Untuk Masuk Sistem');window.location='login.php'</script>";
+			} else if ($_GET['pesan'] == "data_kosong") {
+                echo "<script>alert('Akun Anda Dalam Proses Verifikasi');window.location='login.php'</script>";
+			}
+		}
+		?>
+        <div class="form-v8-content">
+            <div class="form-left">
+                <img src="ipj-black.png" height="300" width="500" alt="form" style="position: relative; top: 50px;">
+            </div>
+            <div class="form-right">
+                <div class="tab">
+                    <div class="tab-inner">
+                        <button class="tablinks" onclick="openCity(event, 'sign-in')" id="defaultOpen">Login</button>
                     </div>
-                    <div class="input-group mb-3">
-                        <input type="password" class="form-control" placeholder="Password" name="password">
-                        <div class="input-group-append">
-                            <div class="input-group-text">
-                                <span class="fas fa-lock"></span>
-                            </div>
-                        </div>
+                    <div class="tab-inner">
+                        <button class="tablinks" onclick="openCity(event, 'sign-up')">Daftar</button>
                     </div>
-                    <div class="row">
-                        <div class="col-8">
-                            <div class="icheck-primary">
-                                <input type="checkbox" id="remember">
-                                <label for="remember">
-                                    Remember Me
-                                </label>
-                            </div>
+                </div>
+
+                <form class="form-detail" action="proses_login.php" method="post">
+                    <div class="tabcontent" id="sign-in">
+                        <div class="form-row">
+                            <label class="form-row-inner">
+                                <input type="text" name="username" id="full_name_1" class="input-text" required
+                                    oninvalid="this.setCustomValidity('Username tidak boleh kosong')"
+                                    oninput="setCustomValidity('')">
+                                <span class="label">Username</span>
+                                <span class="border"></span>
+                            </label>
                         </div>
-                        <!-- /.col -->
-                        <div class="col-4">
-                            <button type="submit" class="btn btn-primary btn-block">Sign In</button>
+                        <div class="form-row">
+                            <label class="form-row-inner">
+                                <input type="password" name="password" id="password_1" class="input-text" required
+                                    oninvalid="this.setCustomValidity('Password tidak boleh kosong')"
+                                    oninput="setCustomValidity('')">
+                                <span class="label">Password</span>
+                                <span class="border"></span>
+                            </label>
                         </div>
-                        <!-- /.col -->
+                        <div class="form-row-last">
+                            <input type="submit" name="register" class="register" value="Sign In">
+                        </div>
                     </div>
                 </form>
-                <!-- /.social-auth-links -->
 
-                <p class="mb-1">
-                    <a href="forgot-password.html">I forgot my password</a>
-                </p>
-                <p class="mb-0">
-                    <a href="register.html" class="text-center">Register a new membership</a>
-                </p>
+                <form class="form-detail" action="../Daftar/daftar.php" method="post">
+                    <div class="tabcontent" id="sign-up">
+                        <div class="form-row">
+                            <label class="form-row-inner">
+                                <label style="text-align: center">Selamat Datang di Website Info Perumahan Jember
+                                </label><br>
+                                <label>Jika Anda Sebagai Pengunjung Anda Tidak Perlu Mendafatar.<br> Jika Anda Sebagai
+                                    Developer Klik Selanjutnya untuk Mendaftar </label>
+                            </label>
+                        </div>
+                        <div class="form-row-last">
+                            <input type="submit" name="selanjutnya" class="register" value="Selanjutnya">
+                        </div>
+                    </div>
+                </form>
             </div>
-            <!-- /.login-card-body -->
         </div>
     </div>
-    <!-- /.login-box -->
 
-    <!-- jQuery -->
-    <script src="../../../assets/sb admin/plugins/jquery/jquery.min.js"></script>
-    <!-- Bootstrap 4 -->
-    <script src="../../../assets/sb admin/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <!-- AdminLTE App -->
-    <script src="../../../assets/sb admin/dist/js/adminlte.min.js"></script>
+    <script type="text/javascript">
+    function openCity(evt, cityName) {
+        var i, tabcontent, tablinks;
+        tabcontent = document.getElementsByClassName("tabcontent");
+        for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+        }
+        tablinks = document.getElementsByClassName("tablinks");
+        for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+        document.getElementById(cityName).style.display = "block";
+        evt.currentTarget.className += " active";
+    }
 
+    // Get the element with id="defaultOpen" and click on it
+    document.getElementById("defaultOpen").click();
+    </script>
 </body>
 
 </html>

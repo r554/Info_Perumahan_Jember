@@ -3,317 +3,260 @@ session_start();
 
 if ($_SESSION['status'] != "login") {
   header("location:login/login.php?pesan=belum_login");
-}
+} else {
+    if (isset($_GET['pesan'])) {
+        if ($_GET['pesan'] == "berhasil") {
+       
+            echo "<script>alert('Login Berhasil');</script>";
+        }
+    }
+} 
 
 ?>
+
 
 <!DOCTYPE html>
 <html>
 
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>AdminLTE 3 | Blank Page</title>
-  <!-- Tell the browser to be responsive to screen width -->
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Admin || IPJ</title>
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="../../assets/sb admin/plugins/fontawesome-free/css/all.min.css">
-  <!-- Ionicons -->
-  <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
-  <!-- overlayScrollbars -->
-  <link rel="stylesheet" href="../../assets/sb admin/dist/css/adminlte.min.css">
-  <!-- Google Font: Source Sans Pro -->
-  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="../../assets/sb admin/plugins/fontawesome-free/css/all.min.css">
+    <!-- Ionicons -->
+    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <!-- overlayScrollbars -->
+    <link rel="stylesheet" href="../../assets/sb admin/dist/css/adminlte.min.css">
+    <!-- Google Font: Source Sans Pro -->
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
 </head>
 
 <body class="hold-transition sidebar-mini">
-  <!-- Site wrapper -->
-  <div class="wrapper">
-    <!-- Navbar -->
-    <!--<nav class="main-header navbar navbar-expand navbar-white navbar-light">-->
-    <nav class="main-header navbar navbar-expand navbar-white navbar-light" style="background-color: #3C8DBC;">
+    <!-- Site wrapper -->
+    <div class="wrapper">
+        <!-- Navbar -->
+        <!--<nav class="main-header navbar navbar-expand navbar-white navbar-light">-->
+        <nav class="main-header navbar navbar-expand navbar-white navbar-light" style="background-color: #3C8DBC;">
 
-      <!-- Left navbar links -->
-      <ul class="navbar-nav">
-        <li class="nav-item">
-          <a class="nav-link text-white" data-widget="pushmenu" href="#"><i class="fas fa-bars"></i></a>
-        </li>
-        <li class="nav-item d-none d-sm-inline-block">
-          <a href="index.php" class="nav-link text-white">Home</a>
-          <div class="info">
-            <a href="#" class="d-block">
-              <?php
+            <!-- Left navbar links -->
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link text-white" data-widget="pushmenu" href="#"><i class="fas fa-bars"></i></a>
+                </li>
+                <li class="nav-link">
+                    <p class="text-white">Selamat Datang <?php echo $_SESSION['nama_admin']; ?></a></p>
+                </li>
+                <!--<li class="nav-item d-none d-sm-inline-block">
+                    <a href="index.php" class="nav-link text-white">Home</a>
+                    <div class="info">
+                        <a href="#" class="d-block">
 
-              //echo $_SESSION['id']
-              ?>
-            </a>
-        </li>
-        <li class="nav-item d-none d-sm-inline-block">
-          <a href="#" class="nav-link text-white">Contact</a>
-        </li>
-      </ul>
+                        </a>
+                </li>
+                <li class="nav-item d-none d-sm-inline-block">
+                    <a href="#" class="nav-link text-white">Contact</a>
+                </li>-->
+            </ul>
 
-      <!-- SEARCH FORM ->
-      <form class="form-inline ml-3">
-        <div class="input-group input-group-sm">
-          <input class="form-control form-control-navbar" type="search" placeholder="Search" aria-label="Search">
-          <div class="input-group-append">
-            <button class="btn btn-navbar" type="submit">
-              <i class="fas fa-search"></i>
-            </button>
-          </div>
-        </div>
-      </form>-->
 
-      <!-- Right navbar links -->
-      <ul class="navbar-nav ml-auto">
-        <!-- Messages Dropdown Menu -->
-        <li class="nav-item dropdown">
-          <a class="nav-link" data-toggle="dropdown" href="#">
-            <i class="far fa-comments"></i>
-            <span class="badge badge-danger navbar-badge">3</span>
-          </a>
-          <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
-            <a href="#" class="dropdown-item">
-              <!-- Message Start -->
-              <div class="media">
-                <img src="../../dist/img/user1-128x128.jpg" alt="User Avatar" class="img-size-50 mr-3 img-circle">
-                <div class="media-body">
-                  <h3 class="dropdown-item-title">
-                    Brad Diesel
-                    <span class="float-right text-sm text-danger"><i class="fas fa-star"></i></span>
-                  </h3>
-                  <p class="text-sm">Call me whenever you can...</p>
-                  <p class="text-sm text-muted"><i class="far fa-clock mr-1"></i> 4 Hours Ago</p>
-                </div>
-              </div>
-              <!-- Message End -->
-            </a>
-            <div class="dropdown-divider"></div>
-            <a href="#" class="dropdown-item">
-              <!-- Message Start -->
-              <div class="media">
-                <img src="../../dist/img/user8-128x128.jpg" alt="User Avatar" class="img-size-50 img-circle mr-3">
-                <div class="media-body">
-                  <h3 class="dropdown-item-title">
-                    John Pierce
-                    <span class="float-right text-sm text-muted"><i class="fas fa-star"></i></span>
-                  </h3>
-                  <p class="text-sm">I got your message bro</p>
-                  <p class="text-sm text-muted"><i class="far fa-clock mr-1"></i> 4 Hours Ago</p>
-                </div>
-              </div>
-              <!-- Message End -->
-            </a>
-            <div class="dropdown-divider"></div>
-            <a href="#" class="dropdown-item">
-              <!-- Message Start -->
-              <div class="media">
-                <img src="../../dist/img/user3-128x128.jpg" alt="User Avatar" class="img-size-50 img-circle mr-3">
-                <div class="media-body">
-                  <h3 class="dropdown-item-title">
-                    Nora Silvester
-                    <span class="float-right text-sm text-warning"><i class="fas fa-star"></i></span>
-                  </h3>
-                  <p class="text-sm">The subject goes here</p>
-                  <p class="text-sm text-muted"><i class="far fa-clock mr-1"></i> 4 Hours Ago</p>
-                </div>
-              </div>
-              <!-- Message End -->
-            </a>
-            <div class="dropdown-divider"></div>
-            <a href="#" class="dropdown-item dropdown-footer">See All Messages</a>
-          </div>
-        </li>
-        <!-- Notifications Dropdown Menu -->
-        <li class="nav-item dropdown">
-          <a class="nav-link" data-toggle="dropdown" href="#">
-            <i class="far fa-bell"></i>
-            <span class="badge badge-warning navbar-badge">15</span>
-          </a>
-          <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
-            <span class="dropdown-item dropdown-header">15 Notifications</span>
-            <div class="dropdown-divider"></div>
-            <a href="#" class="dropdown-item">
-              <i class="fas fa-envelope mr-2"></i> 4 new messages
-              <span class="float-right text-muted text-sm">3 mins</span>
-            </a>
-            <div class="dropdown-divider"></div>
-            <a href="#" class="dropdown-item">
-              <i class="fas fa-users mr-2"></i> 8 friend requests
-              <span class="float-right text-muted text-sm">12 hours</span>
-            </a>
-            <div class="dropdown-divider"></div>
-            <a href="#" class="dropdown-item">
-              <i class="fas fa-file mr-2"></i> 3 new reports
-              <span class="float-right text-muted text-sm">2 days</span>
-            </a>
-            <div class="dropdown-divider"></div>
-            <a href="#" class="dropdown-item dropdown-footer">See All Notifications</a>
-          </div>
-        </li>
-        <!--<li class="nav-item">
-          <a class="nav-link" data-widget="control-sidebar" data-slide="true" href="#">
-            <i class="fas fa-th-large"></i>
-          </a>
-        </li>-->
-      </ul>
-    </nav>
-    <!-- /.navbar -->
+            <!-- Right navbar links -->
+            <ul class="navbar-nav ml-auto">
+                <!-- Notifications Dropdown Menu -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link" href="?page=pendaftar">
+                        <i class="far fa-bell"></i>
+                        <span class="badge badge-warning navbar-badge">
+                            <?php
+                             include 'login/koneksi.php';
+                             $seleksi = mysqli_query($koneksi, "SELECT * FROM tabel_developer where status_developer = 0 ");
+                             $cek = mysqli_num_rows($seleksi);
+                             echo $cek;
+                            ?>
 
-    <!-- Main Sidebar Container -->
-    <aside class="main-sidebar sidebar-dark-primary elevation-4" style="background-color: #222D32;">
-      <!-- Brand Logo -->
-      <a href="?page=dashboard" class="brand-link">
-        <span class="brand-text font-weight-light">Info Perumahan Jember</span>
-      </a>
+                        </span>
+                    </a>
+                </li>
+                <li class="nav-link">
+                    <a href="Login/logout.php">
+                        <p class="text-white"><span class="nav-icon fas fa-sign-out-alt text-white"></span> Log Out</p>
+                    </a>
+                </li>
 
-      <!-- Sidebar -->
-      <div class="sidebar">
-        <!-- Sidebar user (optional) -->
-        <div class="user-panel mt-3 pb-3 mb-3 d-flex">
-          <div class="image">
-            <img src="img/foto_profil/<?php echo $_SESSION['gbr']; ?>" class="img-circle elevation-2" alt="User Image">
-          </div>
-          <div class="info">
-            <a href="#" class="d-block">
-              <?php
-              //session_start();
-              if ($_SESSION['status'] != "login") {
-                header("location:login/login.php?pesan=belum_login");
-              }
-              echo $_SESSION['nama_admin']
-              ?>
-            </a>
-          </div>
-        </div>
-
-        <!-- Sidebar Menu -->
-        <nav class="mt-2">
-          <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-            <!-- Add icons to the links using the .nav-icon class
-               with font-awesome or any other icon font library -->
-            <li class="nav-item">
-              <a href="?page=dashboard" class="nav-link">
-                <i class="nav-icon fas fa-tachometer-alt"></i>
-                <p>
-                  Dashboard
-                </p>
-              </a>
-            </li>
-
-            <li class="nav-item">
-              <a href="?page=profile" class="nav-link">
-                <i class="nav-icon far fa-user-circle"></i>
-                <p>
-                  Profile
-                </p>
-              </a>
-            </li>
-
-            <li class="nav-item">
-              <a href="?page=pendaftar" class="nav-link">
-                <i class="nav-icon fas fa-clipboard-list"></i>
-                <p>
-                  Pendaftar
-                </p>
-              </a>
-            </li>
-
-            <li class="nav-item">
-              <a href="?page=akun_terdaftar" class="nav-link">
-                <i class="nav-icon fas fa-user-edit"></i>
-                <p>
-                  Akun Terdaftar
-                </p>
-              </a>
-            </li>
-
-            <li class="nav-item">
-              <a href="login/logout.php" class="nav-link">
-                <i class="nav-icon fas fa-chevron-left"></i>
-                <p>
-                  Keluar
-                </p>
-              </a>
-            </li>
-
-          </ul>
+            </ul>
         </nav>
-        <!-- /.sidebar-menu -->
-      </div>
-      <!-- /.sidebar -->
-    </aside>
+        <!-- /.navbar -->
+
+        <!-- Main Sidebar Container -->
+        <aside class="main-sidebar sidebar-dark-primary elevation-4" style="background-color: #222D32;">
+            <!-- Brand Logo -->
+            <a href="?page=dashboard" class="brand-link text-center">
+                <span class="brand-text font-weight-light">Info Perumahan Jember</span>
+            </a>
+
+            <!-- Sidebar -->
+            <div class="sidebar">
+                <!-- Sidebar user (optional) -->
+                <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+                    <div class="image">
+                        <img src="img/foto_profil/<?php echo $_SESSION['gbr']; ?>" class="img-circle elevation-2"
+                            alt="User Image">
+                    </div>
+                    <div class="info">
+                        <a href="#" class="d-block">
+                            <?php
+                            //session_start();
+                            if ($_SESSION['status'] != "login") {
+                                header("location:login/login.php?pesan=belum_login");
+                            }
+                            echo $_SESSION['nama_admin']
+                            ?>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Sidebar Menu -->
+                <nav class="mt-2">
+                    <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
+                        data-accordion="false">
+                        <!-- Add icons to the links using the .nav-icon class
+               with font-awesome or any other icon font library -->
+                        <li class="nav-item">
+                            <a href="?page=dashboard" class="nav-link">
+                                <i class="nav-icon fas fa-tachometer-alt"></i>
+                                <p>
+                                    Dashboard
+                                </p>
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a href="?page=profile" class="nav-link">
+                                <i class="nav-icon far fa-user-circle"></i>
+                                <p>
+                                    Profile
+                                </p>
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a href="?page=pendaftar" class="nav-link">
+                                <i class="nav-icon fas fa-clipboard-list"></i>
+                                <p>
+                                    Pendaftar
+                                </p>
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a href="?page=akun_terdaftar" class="nav-link">
+                                <i class="nav-icon fas fa-user-edit"></i>
+                                <p>
+                                    Akun Terdaftar
+                                </p>
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a href="?page=postingan_ipj" class="nav-link">
+                                <i class="nav-icon fas fa-table"></i>
+                                <p>
+                                    Postingan IPJ
+                                </p>
+                            </a>
+                        </li>
+
+                        <!--<li class="nav-item">
+                            <a href="login/logout.php" class="nav-link">
+                                <i class="nav-icon fas fa-chevron-left"></i>
+                                <p>
+                                    Keluar
+                                </p>
+                            </a>
+                        </li>-->
+
+                    </ul>
+                </nav>
+                <!-- /.sidebar-menu -->
+            </div>
+            <!-- /.sidebar -->
+        </aside>
 
 
-    <!-- Content Wrapper. Contains page content -->
-    <div class="content-wrapper">
+        <!-- Content Wrapper. Contains page content -->
+        <div class="content-wrapper">
 
 
-      <!-- Kondisi Halaman -->
-      <?php
-      if (@$_GET['page'] == 'dashboard' || @$_GET['page'] == '') {
-        include "../../views/admin/dashboard.php";
-      } elseif (@$_GET['page'] == 'profile') {
-        include "../../views/admin/akun.php";
-      } elseif (@$_GET['page'] == 'pendaftar') {
-        include "akun_developer.php";
-      } elseif (@$_GET['page'] == 'akun_terdaftar') {
-        include "../../views/admin/akun_terdaftar.php";
-      } elseif (@$_GET['page'] == 'hitung_postingan') {
-        include "hitung_postingan.php";
-      } elseif (@$_GET['page'] == 'pendaftar2') {
-        include "../../views/admin/pendaftar2.php";
-      } elseif (@$_GET['page'] == 'pendaftar3') {
-        include "../../views/admin/pendaftar3.php";
-      } elseif (@$_GET['page'] == 'edit_akun') {
-        include "edit_profil.php";
-      } elseif (@$_GET['page'] == 'lihat_akun') {
-        include "tampilan_detail_akun_developer.php";
-      } elseif (@$_GET['page'] == 'hapus_akun') {
-        include "hapus_akun.php";
-      } elseif (@$_GET['page'] == 'lihat_akun_terdaftar') {
-        include "tampilan_detail_akun_terdaftar.php";
-      }
+            <!-- Kondisi Halaman -->
+            <?php
+                if (@$_GET['page'] == 'dashboard' || @$_GET['page'] == '') {
+                    include "../../views/admin/dashboard.php";
+                } elseif (@$_GET['page'] == 'profile') {
+                    include "../../views/admin/akun.php";
+                } elseif (@$_GET['page'] == 'pendaftar') {
+                    include "akun_developer.php";
+                } elseif (@$_GET['page'] == 'akun_terdaftar') {
+                    include "../../views/admin/akun_terdaftar.php";
+                } elseif (@$_GET['page'] == 'hitung_postingan') {
+                    include "hitung_postingan.php";
+                } elseif (@$_GET['page'] == 'pendaftar2') {
+                    include "../../views/admin/pendaftar2.php";
+                } elseif (@$_GET['page'] == 'pendaftar3') {
+                    include "../../views/admin/pendaftar3.php";
+                } elseif (@$_GET['page'] == 'edit_akun') {
+                    include "edit_profil.php";
+                } elseif (@$_GET['page'] == 'lihat_akun') {
+                    include "tampilan_detail_akun_developer.php";
+                } elseif (@$_GET['page'] == 'hapus_akun') {
+                    include "hapus_akun.php";
+                } elseif (@$_GET['page'] == 'lihat_akun_terdaftar') {
+                    include "tampilan_detail_akun_terdaftar.php";
+                } elseif (@$_GET['page'] == 'postingan_ipj') {
+                    include "data_postingan.php";
+                } elseif (@$_GET['page'] == 'detail_data_rumah') {
+                    include "detail_data_rumah.php";
+                }
 
-      ?>
+            ?>
 
 
-      <!-- Content Header (Page header) -->
-      <!-- Main content -->
-      <section class="content">
+            <!-- Content Header (Page header) -->
+            <!-- Main content -->
+            <section class="content">
 
-      </section>
-      <!-- /.content -->
+            </section>
+            <!-- /.content -->
+        </div>
+        <!-- /.content-wrapper -->
+
+
+        <footer class="main-footer">
+            <h10><b>Copyright&copy;</b>Info Perumahan Jember</h10>
+        </footer>
+
+
+
+        <!-- Control Sidebar -->
+        <aside class="control-sidebar control-sidebar-dark">
+            <!-- Control sidebar content goes here -->
+        </aside>
+        <!-- /.control-sidebar -->
     </div>
-    <!-- /.content-wrapper -->
-
-
-    <footer class="main-footer">
-      <h10><b>Copyright&copy;</b>Info Perumahan Jember</h10>
-    </footer>
+    <!-- ./wrapper -->
 
 
 
-    <!-- Control Sidebar -->
-    <aside class="control-sidebar control-sidebar-dark">
-      <!-- Control sidebar content goes here -->
-    </aside>
-    <!-- /.control-sidebar -->
-  </div>
-  <!-- ./wrapper -->
-
-
-
-  <!-- jQuery -->
-  <script src="../../assets/sb admin/plugins/jquery/jquery.min.js"></script>
-  <!-- Bootstrap 4 -->
-  <script src="../../assets/sb admin/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <!-- AdminLTE App -->
-  <script src="../../assets/sb admin/dist/js/adminlte.min.js"></script>
-  <!-- AdminLTE for demo purposes -->
-  <script src="../../assets/sb admin/dist/js/demo.js"></script>
+    <!-- jQuery -->
+    <script src="../../assets/sb admin/plugins/jquery/jquery.min.js"></script>
+    <!-- Bootstrap 4 -->
+    <script src="../../assets/sb admin/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- AdminLTE App -->
+    <script src="../../assets/sb admin/dist/js/adminlte.min.js"></script>
+    <!-- AdminLTE for demo purposes -->
+    <script src="../../assets/sb admin/dist/js/demo.js"></script>
 </body>
 
 </html>

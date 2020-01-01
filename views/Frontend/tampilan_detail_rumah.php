@@ -25,6 +25,16 @@ include 'koneksi.php';
     <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
     <link rel="stylesheet" href="css/jquery-ui.min.css" type="text/css">
     <link rel="stylesheet" href="css/style.css" type="text/css">
+
+
+    <!--<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!- Latest compiled and minified CSS ->
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <!- Optional theme ->
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+    -->
 </head>
 
 <body>
@@ -101,7 +111,7 @@ include 'koneksi.php';
                 <div class="col-lg-12">
                     <div class="property-title">
                         <h3><?php echo $row['judul_postingan']; ?></h3>
-                        <a href="#"><i class="fa flaticon-placeholder"></i> London, 76 Guild Street, EC3P 3WF</a>
+                        <!--<a href="#"><i class="fa flaticon-placeholder"></i> London, 76 Guild Street, EC3P 3WF</a>-->
                     </div>
                     <div class="property-price">
                         <p>Harga Mulai -</p>
@@ -120,16 +130,99 @@ include 'koneksi.php';
                 </div>
             </div>
 
+
             <div class="row">
                 <div class="col-lg-12">
                     <div class="property-img owl-carousel">
                         <div class="single-img">
-                            <img src="img/single-property/1.jpg" alt="">
+                            <img src="../developer/img/postingan/<?php echo $row['foto_1'];
+                                                                    ?>" alt="">
                         </div>
                         <div class="single-img">
-                            <img src="img/single-property/2.jpg" alt="">
+                            <img src="../developer/img/postingan/<?php echo $row['foto_2'];
+                                                                    ?>" alt="">
+                        </div>
+                        <div class="single-img">
+                            <img src="../developer/img/postingan/<?php echo $row['foto_3'];
+                                                                    ?>" alt="">
+                        </div>
+                        <div class="single-img">
+                            <img src="../developer/img/postingan/<?php echo $row['foto_4'];
+                                                                    ?>" alt="">
+                        </div>
+                        <div class="single-img">
+                            <img src="../developer/img/postingan/<?php echo $row['foto_5'];
+                                                                    ?>" alt="">
                         </div>
                     </div>
+
+
+                    <!-- <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+                        <!- Carousel Indikator ->
+                        <ol class="carousel-indicators">
+                            <!-<li data-target="carousel-example-generic" data-slide-to="0" class="active"></li>
+                            <li data-target="carousel-example-generic" data-slide-to="1"></li>->
+                            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                            <li data-target="#myCarousel" data-slide-to="1"></li>
+                            <li data-target="#myCarousel" data-slide-to="2"></li>
+                        </ol>-->
+
+                    <!-- Wrapper for Slide ->
+                        <div class="carousel-inner">
+                            <div class="item active">
+                                <img src="../developer/img/postingan/<?php //echo $row['foto_1']; 
+                                                                        ?>" alt="Slide 1">
+                                <div class="carousel-caption">
+                                    <h3>Label Caption 1</h3>
+                                    <p>Lorem Ipsum is simply dummy text</p>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <img src="../developer/img/postingan/<?php //echo $row['foto_2']; 
+                                                                        ?>" alt="Slide 1">
+                                <div class="carousel-caption">
+                                    <h3>Label Caption 2</h3>
+                                    <p>Lorem Ipsum is simply dummy text</p>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <img src="../developer/img/postingan/<?php //echo $row['foto_1']; 
+                                                                        ?>" alt="Slide 1">
+                                <div class="carousel-caption">
+                                    <h3>Label Caption 3</h3>
+                                    <p>Lorem Ipsum is simply dummy text</p>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <img src="../developer/img/postingan/<?php //echo $row['foto_2']; 
+                                                                        ?>" alt="Slide 1">
+                                <div class="carousel-caption">
+                                    <h3>Label Caption 4</h3>
+                                    <p>Lorem Ipsum is simply dummy text</p>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <img src="../developer/img/postingan/<?php //echo $row['foto_1']; 
+                                                                        ?>" alt="Slide 1">
+                                <div class="carousel-caption">
+                                    <h3>Label Caption 5</h3>
+                                    <p>Lorem Ipsum is simply dummy text</p>
+                                </div>
+                            </div>
+                        </div>-->
+
+                    <!-- Control ->
+                        <a href="#carousel-example-generic" class="carousel-control left" data-slide="prev" role="button">
+                            <span class="glyphicon glyphicon-chevron-left"></span>
+                        </a>
+                        <a href="#carousel-example-generic" class="carousel-control right" data-slide="next" role="button">
+                            <span class="glyphicon glyphicon-chevron-right"></span>
+                        </a>
+                    </div>
+                    <!- jQuery (necessary for Bootstrap's JavaScript plugins) ->
+                    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+                    <!- Latest compiled and minified JavaScript ->
+                    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>-->
                 </div>
             </div>
         </div>
@@ -152,7 +245,7 @@ include 'koneksi.php';
                                             <p>Luas Bangunan</p>
                                             <img src="img/rooms/size.png" alt="">
                                             <i class="flaticon-bath"></i>
-                                            <span><?php echo $row['luas_bangunan']; ?></span>
+                                            <span><?php echo $row['luas_bangunan']; ?>M<sup>2</sup></span>
                                         </div>
                                         <div class="beds">
                                             <p>Kamar Tidur</p>
@@ -177,74 +270,80 @@ include 'koneksi.php';
                             <div class="col-lg-12">
                                 <div class="property-description">
                                     <h4>Deskripsi</h4>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent in justo
-                                        elementum,fermentum justo ac, rutrum erat. Aenean ut malesuada diam. Proin
-                                        bibendum
-                                        sapien sodales, convallis dolor facilisis, ultricies nisl. Sed malesuada nibh
-                                        sed
-                                        velit ultricies, id varius lacus feugiat. Aenean vestibulum, nisl eget accumsan
-                                        aliquam, magna diam convallis risus, in tristique metus sem eu tortor. Cras leo
-                                        libero, fermentum quis aliquam et, tincidunt at dolor. </p>
+                                    <p> Semakin Cepatnya perkembangan penduduk di Indonesia membuat banyak orang sulit untuk mencari rumah,
+                                        saat ini pemerintah mengadakan sebuah program untuk memberikan sebuah kesempatan untuk pengajuan Subsidi yang dikhususkan untuk kalangan Golongan menengah. </p>
                                 </div>
                                 <div class="property-features">
                                     <h4>Spesifikasi Bangunan</h4>
                                     <div class="property-table">
-                                        <table>
-                                            <tr>
-                                                <td><img src="img/check.png" alt=""> Pondasi Bangunan <?php echo $row['pondasi']; ?></td>
-                                                <td><img src="img/check.png" alt=""> Carpeting</td>
-                                                <td><img src="img/check.png" alt=""> Attic fans</td>
-                                            </tr>
-                                            <tr>
-                                                <td><img src="img/check.png" alt=""> Media room</td>
-                                                <td><img src="img/check.png" alt=""> Concrete</td>
-                                                <td><img src="img/check.png" alt=""> Ceiling fans</td>
-                                            </tr>
-                                            <tr>
-                                                <td><img src="img/check.png" alt=""> Family room</td>
-                                                <td><img src="img/check.png" alt=""> Bamboo</td>
-                                                <td><img src="img/check.png" alt=""> Thermostats</td>
-                                            </tr>
-                                            <tr>
-                                                <td><img src="img/check.png" alt=""> Gym/workout room</td>
-                                                <td><img src="img/check.png" alt=""> Stone</td>
-                                                <td><img src="img/check.png" alt=""> Single flush toilets</td>
-                                            </tr>
-                                            <tr>
-                                                <td><img src="img/check.png" alt=""> Library</td>
-                                                <td><img src="img/check.png" alt=""> Tile</td>
-                                                <td><img src="img/check.png" alt=""> Window shutters</td>
-                                            </tr>
-                                            <tr>
-                                                <td><img src="img/check.png" alt=""> Butler's pantry</td>
-                                                <td><img src="img/check.png" alt=""> Laminate</td>
-                                                <td><img src="img/check.png" alt=""> Solar heat</td>
-                                            </tr>
-                                            <tr>
-                                                <td><img src="img/check.png" alt=""> Sunroom</td>
-                                                <td><img src="img/check.png" alt=""> Cork</td>
-                                                <td><img src="img/check.png" alt=""> Solar plumbing</td>
-                                            </tr>
-                                            <tr>
-                                                <td><img src="img/check.png" alt=""> Downstairs's bedroom</td>
-                                                <td><img src="img/check.png" alt=""> Vinyl / linoleum</td>
-                                                <td><img src="img/check.png" alt=""> Solar Screens</td>
-                                            </tr>
-                                            <tr>
-                                                <td><img src="img/check.png" alt=""> Basement</td>
-                                                <td><img src="img/check.png" alt=""> Manufactured wood</td>
-                                                <td><img src="img/check.png" alt=""> Storm windows</td>
-                                            </tr>
-                                            <tr>
-                                                <td><img src="img/check.png" alt=""> Guest quarters</td>
-                                                <td><img src="img/check.png" alt=""> Marble</td>
-                                                <td><img src="img/check.png" alt=""> Tankless water heater</td>
-                                            </tr>
-                                            <tr>
-                                                <td><img src="img/check.png" alt=""> Wine storage</td>
-                                                <td><img src="img/check.png" alt=""> Wood</td>
-                                                <td><img src="img/check.png" alt=""> Skylights or sky tubes</td>
-                                            </tr>
+                                        <table class="table table-borderless table-sm col-lg-6">
+                                            <tbody>
+                                                <tr>
+                                                    <td>Luas bangunan</td>
+                                                    <td>:</td>
+                                                    <td> <?php echo $row['luas_bangunan']; ?> m<sup>2</sup></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Luas tanah</td>
+                                                    <td>:</td>
+                                                    <td> <?php echo $row['luas_tanah']; ?> m<sup>2</sup></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Pondasi</td>
+                                                    <td>:</td>
+                                                    <td> <?php echo $row['pondasi']; ?> </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Dinding</td>
+                                                    <td>:</td>
+                                                    <td> <?php echo $row['dinding']; ?> </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Ukuran keramik</td>
+                                                    <td>:</td>
+                                                    <td> <?php echo $row['keramik']; ?> </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Kusen</td>
+                                                    <td>:</td>
+                                                    <td> <?php echo $row['kusen']; ?> </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Daun pintu</td>
+                                                    <td>:</td>
+                                                    <td> <?php echo $row['daun_pintu']; ?> </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Pintu kamar mandi</td>
+                                                    <td>:</td>
+                                                    <td> <?php echo $row['pintu_km_mandi']; ?> </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Kerangka atap</td>
+                                                    <td>:</td>
+                                                    <td> <?php echo $row['kerangka_atap']; ?> </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Rangka plafon</td>
+                                                    <td>:</td>
+                                                    <td> <?php echo $row['rangka_plafon']; ?> </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Penutup plafon</td>
+                                                    <td>:</td>
+                                                    <td> <?php echo $row['tutup_plafon']; ?> </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Sumber air</td>
+                                                    <td>:</td>
+                                                    <td> <?php echo $row['sumber_air']; ?> </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Listrik</td>
+                                                    <td>:</td>
+                                                    <td> <?php echo $row['daya_listrik']; ?> </td>
+                                                </tr>
+                                            </tbody>
                                         </table>
                                     </div>
                                 </div>
@@ -260,31 +359,41 @@ include 'koneksi.php';
                     <div class="row pb-30">
                         <div class="col-lg-12">
                             <div class="contact-service">
-                                <img src="img/single-property/small.png" alt="">
-                                <p>Listed by</p>
-                                <h5>Oliver G Harris</h5>
+
+                                <?php
+                                //$kd_data_rumahh = $_GET['kd_data_rumah'];
+                                $kd_data_rumah = $_GET['kd_data_rumah'];
+                                $seleksi = mysqli_query($koneksi, "SELECT * FROM tabel_data_rumah where kd_data_rumah = '$kd_data_rumah' ");
+                                $row = mysqli_fetch_array($seleksi);
+
+                                $kd = $row['kd_perumahan'];
+
+                                $query = mysqli_query($koneksi, "SELECT * FROM tabel_perumahan WHERE kd_perumahan='$kd'");
+                                $rowt = mysqli_fetch_array($query);
+                                ?>
+
+                                <img src="../developer/img/<?php echo $rowt['foto_beranda']; ?>" alt="">
+                                <p>Developer Perumahan</p>
+                                <h5><?php echo $rowt['nama_perumahan']; ?></h5>
                                 <table>
                                     <tr>
-                                        <td>Office : <span>1-139-954-3228</span></td>
+                                        <td>Alamat Kantor : <span><?php echo $rowt['alamat_kantor_perumahan']; ?></span></td>
                                     </tr>
                                     <tr>
-                                        <td>Mobile : <span>1-517-328-7751</span></td>
+                                        <td>Telp : <span>(0331)9876966</span></td>
                                     </tr>
                                     <tr>
-                                        <td>Fax : <span>1-458-284-9871</span></td>
+                                        <td>WhatsApp : <span>081987654765</span></td>
                                     </tr>
                                     <tr>
-                                        <td>WhatsApp : <span>1-812-117-2663</span></td>
-                                    </tr>
-                                    <tr>
-                                        <td>Email : <span>oliver@homes.com</span></td>
+                                        <td>Email : <span><?php echo $rowt['Email']; ?></span></td>
                                     </tr>
                                 </table>
-                                <a href="#" class="site-btn list-btn">View More Listings</a>
+                                <a href="#" class="site-btn list-btn">Kunjungi Profil</a>
                             </div>
                         </div>
                     </div>
-                    <div class="row">
+                    <!--<div class="row">
                         <div class="col-lg-12">
                             <div class="room-items">
                                 <div class="room-img set-bg" data-setbg="img/rooms/4.jpg">
@@ -334,7 +443,7 @@ include 'koneksi.php';
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div>-->
                 </div>
             </div>
         </div>
@@ -351,9 +460,8 @@ include 'koneksi.php';
             <div class="row p-37">
                 <div class="col-lg-4">
                     <div class="about-footer">
-                        <h5>About Homes</h5>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eleifend tristique venenatis.
-                            Maecenas a rutrum tellus nam vel semper nibh.</p>
+                        <h5>Tentang Kami</h5>
+                        <p>Info Perumahan Jember Akan Selalu Hadir Untuk Membantu Pemasaran Marketing Developer Perumahan</p>
                         <div class="footer-social">
                             <a href="#"><i class="fa fa-pinterest"></i></a>
                             <a href="#"><i class="fa fa-facebook"></i></a>
@@ -364,65 +472,30 @@ include 'koneksi.php';
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6">
-                    <div class="footer-blog">
-                        <h5>Latest Blog Posts</h5>
 
-                        <div class="single-blog">
-                            <div class="lt-side">
-                                <img src="img/footer-blog-1.jpg" alt="">
-                            </div>
-                            <div class="rt-side">
-                                <h6>How to find the perfect area for<br> your next house.</h6>
-                                <div class="blog-time">
-                                    <i class="flaticon-clock"></i>
-                                    <span>5 min</span>
-                                </div>
-                                <a href="#" class="read-more">
-                                    <i class="flaticon-right-arrow-1"></i>
-                                    <span>Read More</span>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="single-blog">
-                            <div class="lt-side">
-                                <img src="img/footer-blog-2.jpg" alt="">
-                            </div>
-                            <div class="rt-side">
-                                <h6>How to find the perfect area for<br> your next house.</h6>
-                                <div class="blog-time">
-                                    <i class="flaticon-clock"></i>
-                                    <span>5 min</span>
-                                </div>
-                                <a href="#" class="read-more">
-                                    <i class="flaticon-right-arrow-1"></i>
-                                    <span>Read More</span>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
                 </div>
                 <div class="col-lg-4 col-md-6">
                     <div class="footer-address">
-                        <h5>Get In Touch</h5>
+                        <h5>Alamat Kami</h5>
                         <ul>
-                            <li><i class="flaticon-placeholder"></i><span>132 Liberty Streetelit, Plano, Texas</span>
+                            <li><i class="flaticon-placeholder"></i><span>Perum Griya Mangli Indah Blok R-13</span>
                             </li>
-                            <li><i class="flaticon-envelope"></i><span>hello@home.com</span></li>
-                            <li><i class="flaticon-smartphone"></i><span>214-805-4428</span></li>
+                            <li><i class="flaticon-envelope"></i><span>hello@ipj.com</span></li>
+                            <li><i class="flaticon-smartphone"></i><span>08984050435</span></li>
                         </ul>
-                        <p>Monday – Friday: 9 am – 5 pm</p>
-                        <p>Saturday: 9 am – 1pm</p>
+                        <p>Senin – Jumat: 9 am – 5 pm</p>
+                        <p>Sabtu: 9 am – 1pm</p>
                     </div>
                 </div>
             </div>
 
             <div class="row p-20">
                 <div class="col-lg-12 text-center">
-                    <div class="copyright">
+                    <div class="copyright" style="background-color:black">
                         <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                         Copyright &copy;<script>
                             document.write(new Date().getFullYear());
-                        </script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+                        </script> Info Perumahan Jember </a>
                         <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
 
                     </div>

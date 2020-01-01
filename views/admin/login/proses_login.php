@@ -28,7 +28,7 @@ if ($cek > 0) {
     echo $_SESSION['admin_username'];
     echo $_SESSION['gbr'];
     echo $_SESSION['nama_admin'];
-    header("location:../index.php");
+    header("location:../index.php?pesan=berhasil");
 } else {
-    header("location:../index.php?pesan=gagal");
+    header("location:login.php?pesan=gagal");
 }

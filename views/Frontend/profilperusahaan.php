@@ -54,7 +54,7 @@ include 'koneksi.php';
                         <a class="nav-link" href="index.php">Beranda <span class="sr-only">(current)</span></a>
                     </li>
                 </ul>
-                <form class="form-inline my-2 my-lg-0" action="index.php">
+                <form class="form-inline my-2 my-lg-0" action="../developer/Login/login.php">
                     <!--<input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">-->
                     <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Login</button>
                 </form>
@@ -79,7 +79,7 @@ include 'koneksi.php';
     <section class="hero-section set-bg single-property"
         data-setbg="../developer/img/<?php echo $rowt['foto_beranda']; ?>">
         <div class="container hero-text text-white">
-            <h2>Profil perusahaan</h2>
+            <h2><?php echo $rowt['nama_perumahan']; ?></h2>
         </div>
     </section>
     <!-- Hero Section End -->
@@ -93,7 +93,7 @@ include 'koneksi.php';
                     <div class="col-xs-9"></div>
                     <div class="col-md-1">
                         <img src="../developer/img/data_developer/foto_profil/<?php echo $rowt['foto_profil_dev']; ?>"
-                            height="120" width="120" style="border-radius: 100%" alt="">
+                            height="120" width="120" style="border-radius: 50px" alt="">
                     </div>
 
                     <div class="col-5">
@@ -149,16 +149,12 @@ include 'koneksi.php';
                         <div class="room-img set-bg"
                             data-setbg="../developer/img/postingan/<?php echo $row['foto_1']; ?>">
                             <a href="#" class="room-content">
-                                <i class="flaticon-heart"></i>
                             </a>
                         </div>
                         <div class="room-text">
                             <div class="room-details">
                                 <div class="room-title">
                                     <h5><?php echo $row['judul_postingan']; ?></h5>
-                                    <a href="#"><i class="flaticon-placeholder"></i> <span>Location</span></a>
-                                    <a href="#" class="large-width"><i class="flaticon-cursor"></i> <span>Show on
-                                            Map</span></a>
                                 </div>
                             </div>
                             <div class="room-features">
@@ -179,6 +175,11 @@ include 'koneksi.php';
                                         <img src="img/rooms/bath.png" alt="">
                                         <span><?php echo $row['jumlah_wc']; ?></span>
                                     </div>
+                                    <!--<div class="garage">
+                                            <p>Garasi</p>
+                                            <img src="img/rooms/garage.png" alt="">
+                                            <span>1</span>
+                                        </div>-->
                                 </div>
                             </div>
                             <div class="room-price">
@@ -195,8 +196,8 @@ include 'koneksi.php';
             </div>
         </div>
 
-
     </section>
+
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-12">
@@ -204,51 +205,60 @@ include 'koneksi.php';
                 <h3 class="text-center">Alamat Kantor Pemasaran Kami</h3>
                 <br>
             </div>
-            <div class="map">
-                <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d107002.020096289!2d-96.80666618302782!3d33.06138629992991!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x864c21da13c59513%3A0x62aa036489cd602b!2sPlano%2C+TX%2C+USA!5e0!3m2!1sen!2sbd!4v1558246953339!5m2!1sen!2sbd"
-                    allowfullscreen></iframe>
-            </div>
         </div>
     </div>
 
-    <!-- Footer -->
-
-    <footer class="footer-section p-40">
+    <section class="property-details">
         <div class="container">
-
-            <div class="row p-37">
-                <div class="col-lg-4">
-                    <div class="about-footer">
-                        <h5>Tentang Kami</h5>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eleifend tristique venenatis.
-                            Maecenas a rutrum tellus nam vel semper nibh.</p>
-                        <div class="footer-social">
-                            <a href="#"><i class="fa fa-facebook"></i></a>
-                            <a href="#"><i class="fa fa-twitter"></i></a>
-                            <a href="#"><i class="fa fa-instagram"></i></a>
+            <div class="row sp-40 spt-40">
+                <div class="col-lg-12">
+                    <div class="p-ins">
+                        <div class="row">
+                            <div class="col-lg-5">
+                                <div class="about-footer">
+                                    <h5 style="color: #707070;">Silahkan hubungi kami</h5>
+                                    <h6 style="color: #707070;">Tim Kami Akan Segera Menghubungi Anda Kembali</h6>
+                                    <div class="footer-social">
+                                        <h5 style="color: #707070;"><span class="fa fas fa-phone"></span> Telp :
+                                            <?php echo $rowt['no_telp_perum']; ?></h5>
+                                        <h5 style="color: #707070;"><span class="fa far fa-envelope"></span>
+                                            <?php echo $rowt['email_dev']; ?></h5>
+                                        <h5 style="color: #707070;"><span class="fa fas fa-map-marker"></span>
+                                            <?php echo $rowt['alamat_perumahan']; ?></h5>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-2">
+                            </div>
+                            <div class="col-lg-4 col-md-6">
+                                <div class="footer-address">
+                                    <h5 style="color: #707070;">Atau hubungi kami melalui social media</h5>
+                                    <h5 style="color: #707070;"><span class="fa far fa-facebook"></span>
+                                        <?php echo $rowt['facebook']; ?></h5>
+                                    <h5 style="color: #707070;"><span class="fa far fa-instagram"></span>
+                                        <?php echo $rowt['instagram']; ?></h5>
+                                    <h5 style="color: #707070;"><span class="fa far fa-youtube"></span>
+                                        <?php echo $rowt['youtube']; ?></h5>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-
-                <div class="col-sm-4">
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="footer-address">
-                        <h5>Kontak Kami</h5>
-                        <ul>
-                            <li><i class="flaticon-placeholder"></i><span>Tegal Gede, Jl. Tawangmangu No. 20 RT 01 RW 01</span>
-                            </li>
-                            <li><i class="flaticon-envelope"></i><span>ipj4@gmail.com</span></li>
-                            <li><i class="flaticon-smartphone"></i><span>081331982991</span></li>
-                        </ul>
-                    </div>
-                </div>
-                
             </div>
-
         </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="page-footer font-small" style="background-color: #30304E">
+
+        <!-- Copyright -->
+        <div class=" text-center py-3" style="color: white">© 2019 Copyright :
+            <a href="#"> InfoPerumahJember.com</a>
+        </div>
+        <!-- Copyright -->
+
     </footer>
+    <!-- Footer -->
 
 
     <!-- Js Plugins -->

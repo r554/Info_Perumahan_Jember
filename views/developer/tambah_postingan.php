@@ -45,22 +45,23 @@ include 'Login/koneksi.php';
                                 <h5>Keterangan Rumah:</h5>
                                 <div class="form-group">
                                     <label for="">Judul Postingan</label><br>
-                                    <input type="text" name="judul_postingan" style="width: 100%;">
+                                    <input type="text" name="judul_postingan" style="width: 100%;" maxlength="50">
                                 </div>
                                 <!-- /.form-group -->
                                 <div class="form-group">
                                     <label for="">Tipe Rumah</label><br>
-                                    <input type="text" name="tipe_rumah" style="width: 100%;">
+                                    <input type="text" name="tipe_rumah" style="width: 100%;" maxlength="20">
                                 </div>
                                 <!-- /.form-group -->
                                 <div class="form-group">
                                     <label for="">Jumlah Unit</label><br>
-                                    <input type="text" name="jumlah_unit_rumah" style="width: 100%;">
+                                    <input type="text" name="jumlah_unit_rumah" style="width: 100%;" maxlength="4"
+                                        onkeyup="this.value=this.value.replace(/[^0-9]/g,'')" />
                                 </div>
                                 <!-- /.form-group -->
                                 <div class="form-group">
                                     <label for="">Harga Kisaran</label><br>
-                                    <input type="text" name="harga" style="width: 100%;">
+                                    <input type="text" name="harga" style="width: 100%;" maxlength="30">
                                 </div>
                                 <!-- /.form-group -->
                             </div>
@@ -111,17 +112,19 @@ include 'Login/koneksi.php';
                                 <!-- /.form-group -->
                                 <div class="form-group">
                                     <label for="">Jumlah Kamar Tidur</label><br>
-                                    <input type="text" name="jumlah_kamar" style="width: 100%;">
+                                    <input type="text" name="jumlah_kamar" style="width: 100%;" maxlength="4"
+                                        onkeyup="this.value=this.value.replace(/[^0-9]/g,'')" />
                                 </div>
                                 <!-- /.form-group -->
                                 <div class="form-group">
                                     <label for="">Jumlah Kamar Mandi</label><br>
-                                    <input type="text" name="jumlah_wc" style="width: 100%;">
+                                    <input type="text" name="jumlah_wc" style="width: 100%;" maxlength="4"
+                                        onkeyup="this.value=this.value.replace(/[^0-9]/g,'')" />
                                 </div>
                                 <!-- /.form-group -->
                                 <div class="form-group">
                                     <label for="">Sumber Air</label><br>
-                                    <input type="text" name="sumber_air" style="width: 100%;">
+                                    <input type="text" name="sumber_air" style="width: 100%;" maxlength="10">
                                 </div>
                                 <!-- /.form-group -->
                                 <div class="form-group">
@@ -131,22 +134,22 @@ include 'Login/koneksi.php';
                                 <!-- /.form-group -->
                                 <div class="form-group">
                                     <label for="">Pondasi Rumah</label><br>
-                                    <input type="text" name="pondasi" style="width: 100%;">
+                                    <input type="text" name="pondasi" style="width: 100%;" maxlength="20">
                                 </div>
                                 <!-- /.form-group -->
                                 <div class="form-group">
                                     <label for="">Dinding Rumah</label><br>
-                                    <input type="text" name="dinding" style="width: 100%;">
+                                    <input type="text" name="dinding" style="width: 100%;" maxlength="20">
                                 </div>
                                 <!-- /.form-group -->
                                 <div class="form-group">
                                     <label for="">Daun Pintu</label><br>
-                                    <input type="text" name="daun_pintu" style="width: 100%;">
+                                    <input type="text" name="daun_pintu" style="width: 100%;" maxlength="20">
                                 </div>
                                 <!-- /.form-group -->
                                 <div class="form-group">
                                     <label for="">Kusen</label><br>
-                                    <input type="text" name="kusen" style="width: 100%;">
+                                    <input type="text" name="kusen" style="width: 100%;" maxlength="20">
                                 </div>
                                 <!-- /.form-group -->
                                 <div class="form-group">
@@ -161,26 +164,27 @@ include 'Login/koneksi.php';
                                 <!-- /.form-group -->
                                 <div class="form-group">
                                     <label for="">Kerangka Atap</label><br>
-                                    <input type="text" name="kerangka_atap" style="width: 100%;">
+                                    <input type="text" name="kerangka_atap" style="width: 100%;" maxlength="20">
                                 </div>
                                 <!-- /.form-group -->
                                 <div class="form-group">
                                     <label for="">Rangka Plafon</label><br>
-                                    <input type="text" name="rangka_plafon" style="width: 100%;">
+                                    <input type="text" name="rangka_plafon" style="width: 100%;" maxlength="20">
                                 </div>
                                 <!-- /.form-group -->
                                 <div class="form-group">
                                     <label for="">Tutup Plafon</label><br>
-                                    <input type="text" name="tutup_plafon" style="width: 100%;">
+                                    <input type="text" name="tutup_plafon" style="width: 100%;" maxlength="20">
                                 </div>
                                 <!-- /.form-group -->
                                 <div class="form-group">
                                     <label for="">Status</label><br>
-                                    <input type="text" name="status" style="width: 100%;">
+                                    <input type="text" name="status" style="width: 100%;" maxlength="15">
                                 </div>
                                 <!-- /.form-group -->
                                 <div class="form-group">
-                                    <input type="submit" value="Simpan" name="kirim" class="btn btn-info btn-sm" style="width: 100%;">
+                                    <input type="submit" value="Simpan" name="kirim" class="btn btn-info btn-sm"
+                                        style="width: 100%;">
                                 </div>
                                 <!-- /.form-group -->
                             </div>
@@ -247,6 +251,7 @@ include 'Login/koneksi.php';
         $insert = mysqli_query($koneksi, "insert into tabel_data_rumah values ('$kd_data_rumah', '$kd_perumahan', '$judul_postingan', '$tipe_rumah', '$jumlah_unit_rumah', '$jumlah_kamar', '$jumlah_wc', '$harga', '$luas_tanah', '$luas_bangunan', '$sumber_air', '$daya_listrik', '$pondasi', '$dinding', '$daun_pintu', '$kusen', '$keramik', '$pintu_km_mandi', '$kerangka_atap', '$rangka_plafon', '$tutup_plafon', '$status', '$nama_file', '$nama_file2', '$nama_file3', '$nama_file4', '$nama_file5')");
         if ($insert) {
             echo 'Data Berhasil di Simpan';
+            echo "<script>alert('Postingan Berhasil di Tambahakn');window.location='?page=tampil_postingan'</script>";
         } else {
             echo 'Data Gagal di Simpan';
         }

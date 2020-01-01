@@ -59,6 +59,7 @@ if (isset($_SESSION['username'])) {
                                         <label for="">Password</label><br>
                                         <input type="text" name="password">
                                     </div>
+
                                     <input value="Daftar" type="submit" name="kirim">
                                     <!-- /.form-group -->
                                 </div>
@@ -82,6 +83,10 @@ if (isset($_SESSION['username'])) {
                                     <div class="form-group">
                                         <label for="">Foto Diri Beserta KTP</label><br>
                                         <input type="file" name="gambar3">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="">Foto Siup</label><br>
+                                        <input type="file" name="gambar4">
                                     </div>
                                 </div>
                             </div>
@@ -113,13 +118,18 @@ if (isset($_SESSION['username'])) {
             // Upload Foto KTP Developer
             $nama_file2 = $_FILES['gambar2']['name'];
             $source2 = $_FILES['gambar2']['tmp_name'];
-            $folder = '../developer/img/data_developer/foto_ktp/';
-            move_uploaded_file($source2, $folder . $nama_file2);
+            $folder2 = '../developer/img/data_developer/foto_ktp/';
+            move_uploaded_file($source2, $folder2 . $nama_file2);
             // Upload Foto Diri dan KTP Developer
             $nama_file3 = $_FILES['gambar3']['name'];
             $source3 = $_FILES['gambar3']['tmp_name'];
-            $folder = '../developer/img/data_developer/foto_diri_ktp/';
-            move_uploaded_file($source3, $folder . $nama_file3);
+            $folder3 = '../developer/img/data_developer/foto_diri_ktp/';
+            move_uploaded_file($source3, $folder3 . $nama_file3);
+            // Upload Foto Siup
+            $nama_file4 = $_FILES['gambar4']['name'];
+            $source4 = $_FILES['gambar4']['tmp_name'];
+            $folder4 = '../developer/img/data_developer/foto_siup/';
+            move_uploaded_file($source4, $folder4 . $nama_file4);
 
 
             $sql = "SELECT * FROM tabel_developer WHERE username_dev = '$username'";
@@ -130,7 +140,7 @@ if (isset($_SESSION['username'])) {
                 if (!$username || !$pass) {
                     echo "<div align='center'>Masih ada data yang kosong! <a href='daftar.php'>Back</a>";
                 } else {
-                    $data = "INSERT INTO tabel_developer VALUES ('$nik', '$nama_dev', '$alamat_dev', '$no_dev', '$Email', '$nama_file', '$nama_file2', '$nama_file3', '$status', '$username', '$pass')";
+                    $data = "INSERT INTO tabel_developer VALUES ('$nik', '$nama_dev', '$alamat_dev', '$no_dev', '$Email', '$nama_file', '$nama_file2', '$nama_file3', '$nama_file4', '$status', '$username', '$pass', '')";
                     $simpan = $db->query($data);
                     //var_dump($simpan);
                     if ($simpan) {

@@ -1,11 +1,9 @@
 <?php
 // mengaktifkan session php
 session_start();
-
 // menghubungkan dengan koneksi
 include 'koneksi.php';
-//include '../config/koneksi.php';
-//$conn = new database();
+
 
 // menangkap data yang dikirim dari form
 $username = $_POST['username'];
@@ -32,9 +30,8 @@ if ($cek > 0) {
         echo $_SESSION['nama'];
         header("location:../index.php");
     } else {
-        header("location:../index.php?pesan=data_kosong");
-        //echo 'user';
+        header("location:login.php?pesan=data_kosong");
     }
 } else {
-    header("location:../index.php?pesan=gagal");
+    header("location:login.php?pesan=gagal");
 }
